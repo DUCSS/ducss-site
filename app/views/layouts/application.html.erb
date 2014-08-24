@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DucssSiteRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>DUCSS - Dublin University Computer Science Society</title>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <div class="container">
+      <header>
+        <div class="wrapper">
+          <%= link_to image_tag("nav-logo.png", alt: "DUCSS", id: "logo"), root_url %>
 
-</body>
+          <ul class="nav">
+            <li><a href="/events/all">Upcoming Events</a></li>
+            <li><%= link_to "Our Services", root_url(anchor: "services") %></li>
+            <li><%= link_to "Contact Us", root_url(anchor: "contact") %></li>
+            <li><a href="https://twitter.com/ducss" id="twitter"></a></li>
+            <li><a href="https://facebook.com/groups/ducss" id="facebook"></a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div id="body" class="wrapper">
+        <% if notice %>
+          <p><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p><%= alert %></p>
+        <% end %>
+        <%= yield %>
+      </div>
+
+      <footer>
+        <div class="wrapper">
+          <div class="col">
+            <a href="#" class="back-to-top">Back To Top</a>
+          </div>
+          <div class="col">
+            <div id="social">
+              <a href="https://twitter.com/ducss" id="twitter"></a>
+              <a href="https://facebook.com/groups/ducss" id="facebook"></a>
+            </div>
+          </div>
+          <div class="col">
+            <%= image_tag "footer-logo.png", id: "logo" %>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>

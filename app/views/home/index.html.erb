@@ -1,0 +1,59 @@
+<section id="events">
+  <h1>Upcoming Events</h1>
+  <% @events.each_with_index do |event, index| %>
+    <% if index % 2 == 0 %>
+      <div class="row">
+    <% end %>
+      <div class="col">
+        <div class="event">
+          <div class="date">
+            <span class="day"><%= event.date.day %></span>
+            <span class="month"><%= event.date.strftime "%b" %></span>
+          </div>
+          <div class="info">
+            <h3><a href="#"><%= event.title %></a></h3>
+            <span><%= event.location %></span>
+            <span><%= event.date.strftime "%H:%M" %></span>
+          </div>
+        </div>
+        <%= HTML_Truncator.truncate(event.description, 30).html_safe %>
+      </div>
+    <% if index % 2 == 1 %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="more-events">
+    <a href="/events/all">More events...</a>
+  </div>
+</section>
+
+<section id="services">
+  <h1>Our Services</h1>
+  <% @services.each_with_index do |service, index| %>
+    <div class="service">
+      <% if index % 2 == 1 %>
+        <div class="left">
+          <h2><%= service.title %></h2>
+          <%= service.description.html_safe %>
+        </div>
+        <figure class="right">
+          <%= image_tag(service.image.url(:normal)) %>
+        </figure>
+      <% else %>
+        <figure class="left">
+          <%= image_tag(service.image.url(:normal)) %>
+        </figure>
+        <div class="right">
+          <h2><%= service.title %></h2>
+          <%= service.description.html_safe %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</section>
+
+<section id="contact">
+  <h1>Contact Us</h1>
+  <!-- CONTACT FORM -->
+</section>
