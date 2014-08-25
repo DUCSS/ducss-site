@@ -54,7 +54,7 @@ gem 'paperclip'
 gem 'html_truncator'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
