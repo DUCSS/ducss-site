@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable
-
-  validates :email, presence: true, uniqueness: true
-  validates :password, presence: true, confirmation: true, if: lambda { new_record? || !password.nil? }
+  devise :database_authenticatable, :validatable
+  validates_presence_of :password_confirmation, if: lambda { !password.nil? }
 end
