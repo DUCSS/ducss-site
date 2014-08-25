@@ -1,0 +1,22 @@
+<% @events.each_with_index do |event, index| %>
+  <% if index % 2 == 0 %>
+    <div class="row">
+  <% end %>
+    <div class="col">
+      <div class="event">
+        <div class="date">
+          <span class="day"><%= event.date.day %></span>
+          <span class="month"><%= event.date.strftime "%b" %></span>
+        </div>
+        <div class="info">
+          <h3><%= link_to event.title, show_event_path(event.slug) %></a></h3>
+          <span><%= event.location %></span>
+          <span><%= event.date.strftime "%H:%M" %></span>
+        </div>
+      </div>
+      <%= HTML_Truncator.truncate(event.description, 30).html_safe %>
+    </div>
+  <% if index % 2 == 1 %>
+    </div>
+  <% end %>
+<% end %>

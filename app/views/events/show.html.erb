@@ -1,0 +1,18 @@
+<% provide :title, @event.title %>
+<section id="event">
+  <h1><%= @event.title %></h1>
+
+  <div class="row">
+    <div class="event">
+      <div class="date">
+        <span class="day"><%= @event.date.day %></span>
+        <span class="month"><%= @event.date.strftime "%b" %></span>
+      </div>
+      <div class="info">
+        <span><%= @event.location %></span>
+        <span><%= @event.date.strftime "%H:%M" %></span>
+      </div>
+    </div>
+    <%= @event.description.html_safe %>
+  </div>
+</section>

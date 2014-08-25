@@ -1,11 +1,11 @@
 module ApplicationHelper
 
-  def full_title(slug)
+  def full_title(title)
     base_title = "DUCSS - Dublin University Computer Science Society"
-    if slug.empty?
+    if title.empty?
       base_title
     else
-      "#{base_title}" | "#{slug} - #{base_title}"
+      "#{title} - #{base_title}"
     end
   end
 end

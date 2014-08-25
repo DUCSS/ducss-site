@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DUCSS - Dublin University Computer Science Society</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= favicon_link_tag 'favicon.ico' %>
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -16,7 +16,8 @@
           <%= link_to image_tag("nav-logo.png", alt: "DUCSS", id: "logo"), root_url %>
 
           <ul class="nav">
-            <li><a href="/events/all">Upcoming Events</a></li>
+            <li><%= link_to "Upcoming Events", upcoming_events_path %></li>
+            <li><%= link_to "Previous Events", previous_events_path %></li>
             <li><%= link_to "Our Services", root_url(anchor: "services") %></li>
             <li><%= link_to "Contact Us", root_url(anchor: "contact") %></li>
             <li><a href="https://twitter.com/ducss" id="twitter"></a></li>
