@@ -9,7 +9,7 @@
           <span class="month"><%= event.date.strftime "%b" %></span>
         </div>
         <div class="info">
-          <h3><%= link_to event.title, show_event_path(event.slug) %></a></h3>
+          <h3><%= link_to event.title, show_event_path(event.slug) %></h3>
           <span><%= event.location %></span>
           <span><%= event.date.strftime "%H:%M" %></span>
         </div>
