@@ -25,6 +25,15 @@ Rails.application.configure do
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
+  ActionMailer::Base.smtp_settings = {
+    :user_name => Rails.application.secrets.sendgrid_username,
+    :password => Rails.application.secrets.sendgrid_password,
+    :domain => 'ducss.ie',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false

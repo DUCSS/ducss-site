@@ -33,5 +33,41 @@
 
 <section id="contact">
   <h1>Contact Us</h1>
-  <!-- CONTACT FORM -->
+  <%= form_for @message, url: contact_us_path(@message, anchor: "contact") do |f| %>
+    <% if flash[:notice] %>
+      <div class="success"><%= flash[:notice] %></div>
+    <% end %>
+    <% if @message.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@message.errors.count, "error") %> prevented your email from being sent:</h2>
+
+        <ul>
+          <% @message.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="control-group">
+      <%= f.label :name %>
+      <div class="controls">
+        <%= f.text_field :name, placeholder: "Name" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :email %>
+      <div class="controls">
+        <%= f.email_field :email, placeholder: "Email" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :body %>
+      <div class="controls">
+        <%= f.text_area :body, rows: 10, cols: 40, class: "textarea", placeholder: "Write your message here..." %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.submit "Send Message" %>
+    </div>
+  <% end %>
 </section>

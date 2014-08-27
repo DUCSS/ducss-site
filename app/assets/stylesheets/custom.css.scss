@@ -407,6 +407,19 @@ input[type=submit]:active {
   background-color: #e47600;
 }
 
+.success {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background: #e6efc2;
+  color: #264409;
+  border-color: #c6d880;
+  width: 83%;
+  font-size: 20px;
+}
+
+
 /* =================== Footer =================== */
 
 footer {
