@@ -14,4 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore foreman environment variables file
 .env
+
+# Ignore file upload directory
+/public/system
