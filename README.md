@@ -8,7 +8,7 @@ Don't use system Ruby/Gem.
 
 ###System dependencies
 Nokogiri gem requires `libxslt-dev` and `libxml2-dev`.  
-Paperclip gem requires libmagickwand-dev.  
+Paperclip gem requires `libmagickwand-dev`.  
 If you want to run PostgreSQL in development that will also have to be installed.  
 Ruby headers are required for installing both of these gems.  
 If you installed Ruby from source with RVM you should have them.
