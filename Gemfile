@@ -46,9 +46,10 @@ gem 'devise'
 # Admin interface similar to Django's admin
 gem 'rails_admin'
 
-# Paperclip to handle image uploads
+# Paperclip to handle image uploads and S3 to store files
 gem 'rmagick'
 gem 'paperclip'
+gem 'aws-sdk'
 
 # Rails built-in truncate isn't good for HTML
 gem 'html_truncator'

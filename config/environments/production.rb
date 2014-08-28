@@ -35,6 +35,16 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
 
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_host_name => "s3-eu-west-1.amazonaws.com",
+    :s3_credentials => {
+      :bucket => Rails.application.secrets.s3_bucket_name,
+      :access_key_id => Rails.application.secrets.aws_access_key_id,
+      :secret_access_key => Rails.application.secrets.aws_secret_access_key
+    }
+  }
+
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
