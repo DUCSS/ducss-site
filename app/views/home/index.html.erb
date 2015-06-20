@@ -34,8 +34,8 @@
 <section id="contact">
   <h1>Contact Us</h1>
   <%= form_for @message, url: contact_us_path(@message, anchor: "contact") do |f| %>
-    <% if flash[:notice] %>
-      <div class="success"><%= flash[:notice] %></div>
+    <% if flash[:email] %>
+      <div class="success"><%= flash[:email] %></div>
     <% end %>
     <% if @message.errors.any? %>
       <div id="error_explanation">

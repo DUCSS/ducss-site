@@ -9,7 +9,7 @@ class HomeController < ApplicationController
     @message = Message.new(params[:message])
     if @message.valid?
       ContactMailer.contact_email(@message).deliver
-      flash[:notice] = "Email sent"
+      flash[:email] = "Email sent"
       redirect_to root_path
     else
       @events = Event.where('date > ?', DateTime.now).order(date: :desc).limit(4)
