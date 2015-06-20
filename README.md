@@ -3,7 +3,7 @@
 DUCSS site rewritten in Rails and designed for easy Heroku deployment.
 
 ###Ruby version
-2.1.1 is specified in the Gemfile. You *will* want to use either [rbenv](http://rbenv.org "rbenv") or [RVM](http://rvm.io "RVM") to manage your Ruby version.  
+2.2.2 is specified in the Gemfile. You *will* want to use either [rbenv](http://rbenv.org "rbenv") or [RVM](http://rvm.io "RVM") to manage your Ruby version.  
 Don't use system Ruby/Gem.
 
 ###System dependencies
@@ -49,21 +49,21 @@ bundle install --path vendor/bundle
 ```
 Once that's done set up the database.
 ```bash
-rake db:migrate
+bundle exec rake db:migrate
 ```
 SQLite is used in development while PostgreSQL is used in production.  
 Heroku will automatically detect PostgreSQL and set up the database configuration.
 
 
 You will also need to make a user account to access the admin dashboard.  
-That can be done by opening the Rails console with `rails c` and entering the following:
+That can be done by opening the Rails console with `bundle exec rails c` and entering the following:
 ```ruby
-User.new(email: "example@example.org", password: "hunter2", password_confirmation: "hunter2").save
+User.new(email: "example@example.org", password: "hunter22", password_confirmation: "hunter22").save
 ```
 
 ###Running the server
 ```bash
-rails server
+bundle exec rails server
 ```
 That will be enough to run a simple development server.  
 If you're using the [Heroku Toolbelt](https://toolbelt.heroku.com/) you can use foreman to start the Unicorn server with the same settings as will be used in production on Heroku.
