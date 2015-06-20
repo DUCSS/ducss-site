@@ -20,3 +20,6 @@
 
 # Ignore file upload directory
 /public/system
+
+# Ignore bundle install directory
+/vendor/bundle

@@ -45,7 +45,7 @@ gem install bundler
 From there you can use bundle install to get all dependencies.
 ```bash
 cd ducss-site-folder
-bundle install
+bundle install --path vendor/bundle
 ```
 Once that's done set up the database.
 ```bash
