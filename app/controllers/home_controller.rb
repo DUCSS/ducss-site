@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def email
-    @message = Message.new(params[:message])
+    @message = Message.new(message_params)
     if @message.valid?
       ContactMailer.contact_email(@message).deliver
       flash[:email] = "Email sent"
@@ -14,7 +14,7 @@ class HomeController < ApplicationController
     else
       @events = upcoming_events
       @services = Service.all
-      render :action => 'index'
+      render :index
     end
   end
 
@@ -22,5 +22,9 @@ class HomeController < ApplicationController
 
   def upcoming_events(limit: 4)
     Event.where('date > ?', DateTime.now).order(date: :desc).limit(limit)
+  end
+
+  def message_params
+    params.require(:message).permit(:name, :email, :body)
   end
 end
