@@ -16,6 +16,7 @@ group :test do
   gem 'capybara'
   gem 'shoulda-matchers', require: false
   gem 'email_spec', require: false
+  gem 'ffaker'
 end
 
 group :production do
