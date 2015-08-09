@@ -8,6 +8,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find_by slug: params[:slug]
+    @event = Event.find_by! slug: params[:slug]
   end
 end
