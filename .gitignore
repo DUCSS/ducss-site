@@ -23,3 +23,5 @@
 
 # Ignore bundle install directory
 /vendor/bundle
+
+.DS_Store
