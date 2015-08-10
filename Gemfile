@@ -57,8 +57,8 @@ gem 'aws-sdk'
 # Rails built-in truncate isn't good for HTML
 gem 'html_truncator'
 
-# Use unicorn as the app server
-gem 'unicorn'
+# Use puma as the app server
+gem 'puma'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
