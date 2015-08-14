@@ -4,3 +4,9 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+# Running "rake test" will instead run "rake spec"
+Rake::Task["test"].clear
+task 'test' do
+    Rake::Task["spec"].invoke
+end

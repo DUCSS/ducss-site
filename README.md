@@ -1,5 +1,6 @@
 #DUCSS Site
 
+![CircleCI](https://circleci.com/gh/DUCSS/ducss-site.svg?style=shield)  
 DUCSS site rewritten in Rails and designed for easy Heroku deployment.
 
 ###Ruby version
@@ -85,4 +86,8 @@ This will create a new Heroku app(in Dublin), push the code using git which caus
 You will also have to set all of your environment variables either via the [Heroku Dashboard](https://dashboard.heroku.com/apps) or via the `heroku` command line tool.
 
 ###Tests
-I should probably write those...
+Tests are written using rspec and live in the `spec` directory.  
+Run all the tests with:
+```bash
+bundle exec rspec
+```

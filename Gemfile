@@ -8,11 +8,14 @@ gem 'rails', '4.2.2'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 group :test do
-  gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'shoulda-matchers', require: false
+  gem 'email_spec', require: false
 end
 
 group :production do
