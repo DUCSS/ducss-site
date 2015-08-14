@@ -1,6 +1,6 @@
 #DUCSS Site
 
-![CircleCI](https://circleci.com/gh/DUCSS/ducss-site.svg?style=shield)  
+[![CircleCI](https://circleci.com/gh/DUCSS/ducss-site.svg?style=shield)](https://circleci.com/gh/DUCSS/ducss-site)  
 DUCSS site rewritten in Rails and designed for easy Heroku deployment.
 
 ###Ruby version
