@@ -1,3 +1,7 @@
+checkout:
+  post:
+    - git fetch --unshallow
+
 deployment:
   production:
     branch: master
