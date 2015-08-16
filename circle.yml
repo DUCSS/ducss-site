@@ -1,6 +1,6 @@
 checkout:
   post:
-    - git fetch --unshallow
+    - git fetch --unshallow || true
 
 deployment:
   production:

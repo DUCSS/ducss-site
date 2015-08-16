@@ -1,5 +1,12 @@
 <% provide :title, "#{type} Events" %>
+<div class="tab-button-container">
+  <div class="<%= type == 'Upcoming' ? 'active-tab' : '' %> tab">
+    <%= link_to 'Upcoming Events', upcoming_events_path %>
+  </div>
+  <div class="<%= type == 'Previous' ? 'active-tab' : '' %> tab">
+    <%= link_to 'Previous Events', previous_events_path %>
+  </div>
+</div>
 <section id="events">
-  <h1><%= type %> Events</h1>
   <%= render 'listing' %>
 </section>
