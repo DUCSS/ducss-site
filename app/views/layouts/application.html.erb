@@ -30,7 +30,7 @@
     <meta name="twitter:description" content="<%= if yield(:description) then yield(:description) else 'Home to the Dublin University Computer Science Society, find information about upcoming and past events, see a list of our unique services and view our expansive library within.' end %>">
     <meta name="twitter:image" content="<%= request.base_url %><%= asset_path('nav-logo.png') %>">
 
-    <%= render 'layouts/analytics' %> 
+    <%= render 'layouts/analytics' %>
   </head>
   <body>
 
@@ -45,7 +45,7 @@
             <li><%= link_to "Our Services", root_path(anchor: "services") %></li>
             <li><%= link_to "Contact Us", root_path(anchor: "contact") %></li>
             <li><a href="https://twitter.com/ducss" id="twitter"></a></li>
-            <li><a href="https://facebook.com/groups/ducss" id="facebook"></a></li>
+            <li><a href="https://facebook.com/ducss.ie" id="facebook"></a></li>
           </ul>
         </div>
       </header>
