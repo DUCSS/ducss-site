@@ -25,3 +25,6 @@
 /vendor/bundle
 
 .DS_Store
+
+# Ignore image uploads from development
+dev_uploads/
