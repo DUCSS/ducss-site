@@ -2,7 +2,8 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <%= favicon_link_tag 'favicon.ico' %>
+    <%= render 'layouts/favicon' %>
+
     <link href="//fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -13,7 +14,7 @@
     <div class="container">
       <header>
         <div class="wrapper">
-          <%= link_to image_tag("nav-logo.png", alt: "DUCSS", id: "logo"), root_path %>
+          <%= link_to image_tag("nav-logo.png", size: '156x57', alt: "DUCSS", id: "logo"), root_path %>
 
           <ul class="nav">
             <li><%= link_to "Upcoming Events", upcoming_events_path %></li>
