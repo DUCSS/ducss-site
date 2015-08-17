@@ -5,4 +5,4 @@ deployment:
       - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
       - git remote add dokku dokku@ducss.ie:ducss-site
       - git push dokku master
-      - ssh -t dokku@ducss.ie ducss-site bundle exec rake db:migrate
+      - ssh -t dokku@ducss.ie run ducss-site bundle exec rake db:migrate
