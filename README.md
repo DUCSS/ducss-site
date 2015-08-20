@@ -1,7 +1,7 @@
 #DUCSS Site
 
 [![CircleCI](https://circleci.com/gh/DUCSS/ducss-site.svg?style=shield)](https://circleci.com/gh/DUCSS/ducss-site)  
-DUCSS site rewritten in Rails and designed for easy Heroku deployment.
+DUCSS site rewritten in Rails and designed for easy Dokku deployment.
 
 ###Ruby version
 2.2.2 is specified in the Gemfile. You *will* want to use either [rbenv](http://rbenv.org "rbenv") or [RVM](http://rvm.io "RVM") to manage your Ruby version.  
