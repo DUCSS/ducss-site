@@ -10,6 +10,9 @@ RSpec.describe Event, :type => :model do
 
   it { is_expected.to validate_presence_of :slug }
   it { is_expected.to validate_uniqueness_of :slug }
+  it { is_expected.to allow_value('hi-there-gr8-sluggy').for :slug }
+  it { is_expected.not_to allow_value('hi-- ther?e-Ar8-sluggy').for :slug }
+  it { is_expected.to validate_length_of(:slug).is_at_most 128 }
 
   it { is_expected.to validate_presence_of :location }
   it { is_expected.to validate_length_of(:location).is_at_most 128 }
@@ -37,5 +40,4 @@ RSpec.describe Event, :type => :model do
 
     it { is_expected.to match_array previous }
   end
-
 end

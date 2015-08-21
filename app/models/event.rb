@@ -1,7 +1,9 @@
 class Event < ActiveRecord::Base
+
+  LOWER_HYPHEN_CASE_REGEX = /\A[a-z0-9]+(\-([a-z0-9])+)*\Z/
   validates :title, presence: true, length: { maximum: 128 }
   validates :description, presence: true
-  validates :slug, presence: true, uniqueness: true
+  validates :slug, presence: true, uniqueness: true, length: { maximum: 128 }, format: { with: LOWER_HYPHEN_CASE_REGEX }
   validates :location, presence: true, length: { maximum: 128 }
   validates :date, presence: true
 
