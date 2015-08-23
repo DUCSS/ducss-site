@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
     <title><%= full_title(yield(:title)) %></title>
     <%= render 'layouts/favicon' %>
 
     <link href="//fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
-    <%= stylesheet_link_tag    'application', media: 'all'%>
-    <%= javascript_include_tag 'application' %>
-    <%= csrf_meta_tags %>
 
     <!-- Metadata -->
-    <meta charset="utf-8">
     <meta name="description" content="Home to the Dublin University Computer Science Society, find information about upcoming and past events, see a list of our unique services and view our expansive library within.">
     <meta name="keywords" content="Trinity College Dublin Computer Science,Computer Science Society,Programming Society,Irish Computer Science,Netsoc,Irish Netsoc,Irish Esports,Esports,TCD,TCD Computer Science, Hackathon, Irish Hackathon, Student Programming, Irish Programming">
     <link rel="canonical" href="<%= request.original_url %>" />
@@ -25,56 +29,20 @@
 
     <!-- Twitter Metadata -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="<%= request.original_url %>">
+    <meta name="twitter:url" content="@ducss">
     <meta name="twitter:title" content="<%= full_title(yield(:title)) %>">
     <meta name="twitter:description" content="<%= if yield(:description) then yield(:description) else 'Home to the Dublin University Computer Science Society, find information about upcoming and past events, see a list of our unique services and view our expansive library within.' end %>">
     <meta name="twitter:image" content="<%= request.base_url %><%= asset_path('nav-logo.png') %>">
 
     <%= render 'layouts/analytics' %>
+
   </head>
+
   <body>
-
-    <div class="container">
-      <header>
-        <div class="wrapper">
-          <%= link_to image_tag("nav-logo.png", size: '156x57', alt: "DUCSS", id: "logo"), root_path %>
-
-          <ul class="nav">
-            <li><%= link_to "Events", upcoming_events_path %></li>
-            <li><%= link_to "Our Services", root_path(anchor: "services") %></li>
-            <li><%= link_to "Contact Us", root_path(anchor: "contact") %></li>
-            <li><a href="https://twitter.com/ducss" id="twitter"></a></li>
-            <li><a href="https://facebook.com/ducss.ie" id="facebook"></a></li>
-          </ul>
-        </div>
-      </header>
-
-      <div id="body" class="wrapper">
-        <% if notice %>
-          <p><%= notice %></p>
-        <% end %>
-        <% if alert %>
-          <p><%= alert %></p>
-        <% end %>
-        <%= yield %>
-      </div>
-
-      <footer>
-        <div class="wrapper">
-          <div class="col">
-            <a href="#" class="back-to-top">Back To Top</a>
-          </div>
-          <div class="col">
-            <div id="social">
-              <a href="https://twitter.com/ducss" id="twitter"></a>
-              <a href="https://facebook.com/ducss.ie" id="facebook"></a>
-            </div>
-          </div>
-          <div class="col">
-            <%= image_tag "footer-logo.png", id: "logo" %>
-          </div>
-        </div>
-      </footer>
+    <%= render 'layouts/header' %>
+    <div class="main-container">
+      <%= yield %>
     </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -1,0 +1,109 @@
+// listing styles
+.events-container {
+
+  .button-group {
+    margin-top: 10px;
+    .button {
+      padding: 10px;
+      background-color: $ducss-orange;
+      &:hover {
+        background-color: $light-orange;
+      }
+    }
+    a {
+      margin-bottom: 5px;
+    }
+  }
+
+
+  .active {
+    background-color: $light-orange !important;
+  }
+
+  h1 {
+    color: $ducss-orange;
+  }
+
+  .event-container {
+    border-top: 1px solid $header-border-color;
+    margin-top: 5px;
+    padding-top: 30px;
+    color: $link-color;
+    min-height: 300px;
+    .info  {
+      color: $link-color;
+      font-size: 1.2em;
+    }
+  }
+
+  .events-listing {
+    .event {
+      border-radius: 5px 5px 0 0;
+      border: 1px solid $header-border-color;
+      margin: 5px 0px;
+
+      img {
+        width: 100%;
+        border-radius: 4px 4px 0 0;
+      }
+
+      .info {
+        a, a:visited {
+          color: $ducss-orange;
+        }
+      }
+    }
+  }
+
+  .calendar-container {
+
+    .calendar-date {
+      span {
+        font-size: 0.8em;
+        line-height: 28px;
+      }
+    }
+
+    .button-container {
+      a {
+        width: 100%;
+        font-size: 0.2em;
+
+        .cal-button {
+          background-color: $ducss-orange;
+          width: 80%;
+          margin-left: 10%;
+          height: 80%;
+          margin-top: 10%;
+          padding: 5px;
+          line-height: 28px;
+          border-radius: 5px;
+          &:hover {
+            background-color: $light-orange;
+          }
+        }
+      }
+    }
+
+    .day-with-event {
+      padding: 1px;
+      a {
+        background-color: $ducss-orange;
+        color: white;
+        border-radius: 5px;
+        &:hover {
+          background-color: $light-orange;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  .thumbnail {
+    width: 80%;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
+}

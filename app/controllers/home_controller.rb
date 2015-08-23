@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @events = Event.upcoming.limit(4)
     @services = Service.all
     @message = Message.new
   end
@@ -10,9 +9,8 @@ class HomeController < ApplicationController
     if @message.valid?
       ContactMailer.contact_email(@message).deliver_now
       flash[:email] = "Email sent"
-      redirect_to root_path
+      redirect_to root_path(anchor: "contact")
     else
-      @events = Event.upcoming.limit(4)
       @services = Service.all
       render :index
     end

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby File.read('.ruby-version').strip
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -24,7 +24,7 @@ group :production do
   gem 'rails_12factor' # Needed for logging and static assets on Heroku
 end
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -56,6 +56,11 @@ gem 'html_truncator'
 # Use puma as the app server
 gem 'puma'
 
+# responsive (@pavel)
+gem 'foundation-rails'
+
+# pagination
+gem 'kaminari'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 

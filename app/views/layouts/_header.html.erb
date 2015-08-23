@@ -1,0 +1,13 @@
+<header>
+  <div class="row">
+    <div class="small-12 medium-4 large-2 columns text-center">
+      <%= link_to image_tag("nav-logo.png", size: '156x57', alt: "DUCSS", id: "logo"), root_path %>
+    </div>
+    <div class="small-12 medium-8 large-10 columns small-only-text-center text-right nav-links">
+      <%= link_to "Home", root_path, class: "header-link" %>
+      <%= link_to "Events", upcoming_events_path, class: "header-link" %>
+      <%= link_to "Contact Us", root_path(anchor: "contact"), class: "header-link" %>
+    </div>
+    <div class="small-hidden medium-1 columns"></div>
+  </div>
+</header>

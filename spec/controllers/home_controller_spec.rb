@@ -19,7 +19,7 @@ RSpec.describe HomeController, :type => :controller do
         expect(ActionMailer::Base.deliveries.length).to eq 1
       end
       it { is_expected.to set_flash[:email].to 'Email sent' }
-      it { is_expected.to redirect_to root_path }
+      it { is_expected.to redirect_to root_path(anchor: "contact") }
     end
 
     context 'with invalid email parameters' do

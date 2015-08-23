@@ -1,0 +1,33 @@
+header {
+  width: 100%;
+  border-bottom: 1px solid $header-border-color;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: $font-stack;
+  text-transform: uppercase;
+
+  .nav-links {
+    margin-top: 18px;
+    a {
+      margin-left: 20px;
+      color: $link-color;
+      &:hover {
+        color: $link-color;
+        padding-bottom: 5px;
+        border-bottom: 1px solid $ducss-orange;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-links {
+      margin-top: 22px !important;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .nav-links {
+      margin-top: 0px !important;
+    }
+}

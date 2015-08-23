@@ -1,73 +1,66 @@
-<section id="events">
-  <h1>Upcoming Events</h1>
-  <%= render 'events/listing' %>
-  <div class="more-events">
-    <%= link_to "More events...", upcoming_events_path %>
+<ul class="tabs horizontal row" data-tab data-options="deep_linking:true;">
+  <li class="small-6 medium-3 end text-center tab-title active"><a href="#services">Services</a></li>
+  <li class="small-6 medium-3 end text-center tab-title"><a href="#contact">Contact Us</a></li>
+</ul>
+<div class="tabs-content">
+  <div class="content active" id="services">
+    <ul class="services-orbit" data-orbit data-options="bullets:true;variable_height:true;timer:false;slide_number:false;">
+      <% @services.each_with_index do |service, index| %>
+        <% if index == 0 %>
+          <li class="active" data-orbit-slide="<%= index %>">
+        <% else %>
+          <li data-orbit-slide="<%= index %>">
+        <% end %>
+          <div class="row service">
+            <div class="small-12 columns text-center">
+              <%= image_tag(service.image.url(:normal), alt: service.title.downcase) %>
+            </div>
+            <div class="small-10 small-centered columns text">
+              <h2><%= service.title %></h2>
+              <%= service.description.html_safe %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
-</section>
+  <div class="content" id="contact">
+    <%= form_for @message, url: send_message_path(@message) do |f| %>
+      <% if flash[:email] %>
+        <div class="success"><%= flash[:email] %></div>
+      <% end %>
+      <% if @message.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@message.errors.count, "error") %> prevented your email from being sent:</h2>
 
-<section id="services">
-  <h1>Our Services</h1>
-  <% @services.each_with_index do |service, index| %>
-    <div class="service">
-      <% if index % 2 == 1 %>
-        <div class="left">
-          <h2><%= service.title %></h2>
-          <%= service.description.html_safe %>
-        </div>
-        <figure class="right">
-          <%= image_tag(service.image.url(:normal), alt: service.title.downcase) %>
-        </figure>
-      <% else %>
-        <figure class="left">
-          <%= image_tag(service.image.url(:normal), alt: service.title.downcase) %>
-        </figure>
-        <div class="right">
-          <h2><%= service.title %></h2>
-          <%= service.description.html_safe %>
+          <ul>
+            <% @message.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
         </div>
       <% end %>
-    </div>
-  <% end %>
-</section>
-
-<section id="contact">
-  <h1>Contact Us</h1>
-  <%= form_for @message, url: contact_us_path(@message, anchor: "contact") do |f| %>
-    <% if flash[:email] %>
-      <div class="success"><%= flash[:email] %></div>
-    <% end %>
-    <% if @message.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@message.errors.count, "error") %> prevented your email from being sent:</h2>
-
-        <ul>
-          <% @message.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
+      <div class="control-group">
+        <%= f.label :name %>
+        <div class="controls">
+          <%= f.text_field :name, placeholder: "Name" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :email %>
+        <div class="controls">
+          <%= f.email_field :email, placeholder: "Email" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :body %>
+        <div class="controls">
+          <%= f.text_area :body, rows: 5, cols: 40, class: "textarea", placeholder: "Write your message here..." %>
+        </div>
+      </div>
+      <div class="form-actions">
+        <%= f.submit "Send Message" %>
       </div>
     <% end %>
-    <div class="control-group">
-      <%= f.label :name %>
-      <div class="controls">
-        <%= f.text_field :name, placeholder: "Name" %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :email %>
-      <div class="controls">
-        <%= f.email_field :email, placeholder: "Email" %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :body %>
-      <div class="controls">
-        <%= f.text_area :body, rows: 10, cols: 40, class: "textarea", placeholder: "Write your message here..." %>
-      </div>
-    </div>
-    <div class="form-actions">
-      <%= f.submit "Send Message" %>
-    </div>
-  <% end %>
-</section>
+  </div>
+</div>

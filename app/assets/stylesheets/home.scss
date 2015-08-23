@@ -1,0 +1,52 @@
+.tabs {
+  margin-top: 5px;
+  a {
+    border-radius: 3px 3px 0 0;
+  }
+  border-bottom: 1px solid $header-border-color;
+}
+
+.tabs-content {
+  border-radius: 3px;
+}
+
+.touch {
+  .orbit-bullets, .orbit-prev, .orbit-next {
+    display: block !important;
+  }
+}
+
+.content {
+
+  .orbit-prev, .orbit-next {
+    background-color: $header-border-color;
+    border-radius: 5px;
+  }
+
+
+
+  width: 100%;
+  padding-top: 10px;
+  min-height: 300px;
+
+  .service {
+    margin-bottom: 30px;
+
+    img {
+      width: 80%;
+      margin: auto;
+      max-width: 250px;
+    }
+
+    .text {
+      padding-top: 5px;
+      color: $text-color;
+      h2 {
+        margin-bottom: 10px;
+        font-size: 1.3em;
+        font-weight: bold;
+        color: #2d2d2d;
+      }
+    }
+  }
+}
