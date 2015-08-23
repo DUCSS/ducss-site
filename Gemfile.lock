@@ -79,11 +79,13 @@ GEM
     ffaker (2.1.0)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
+    foundation-rails (5.5.0.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0, < 3.4)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     haml (4.0.6)
       tilt
-    hike (1.2.3)
     html_truncator (0.4.1)
       nokogiri (~> 1.5)
     i18n (0.7.0)
@@ -102,15 +104,15 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
-    loofah (2.0.2)
+    loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.6.1)
     mimemagic (0.3.0)
     mini_portile (0.6.2)
-    minitest (5.7.0)
-    multi_json (1.11.1)
+    minitest (5.8.0)
+    multi_json (1.11.2)
     nested_form (0.3.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -142,7 +144,7 @@ GEM
       sprockets-rails
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.6)
+    rails-dom-testing (1.0.7)
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
@@ -196,24 +198,22 @@ GEM
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
     safe_yaml (1.0.4)
-    sass (3.2.19)
-    sass-rails (4.0.5)
+    sass (3.3.14)
+    sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.2)
-      sprockets (~> 2.8, < 3.0)
-      sprockets-rails (~> 2.0)
+      sass (~> 3.1)
+      sprockets (>= 2.8, < 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+      tilt (~> 1.1)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
     spring (1.3.6)
-    sprockets (2.12.3)
-      hike (~> 1.2)
-      multi_json (~> 1.0)
+    sprockets (3.3.3)
       rack (~> 1.0)
-      tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.3.1)
+    sprockets-rails (2.3.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
@@ -242,9 +242,11 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   ffaker
+  foundation-rails
   html_truncator
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   paperclip
   pg
   puma
@@ -253,7 +255,7 @@ DEPENDENCIES
   rails_admin
   rmagick
   rspec-rails
-  sass-rails (~> 4.0.3)
+  sass-rails (~> 5.0.0)
   sdoc (~> 0.4.0)
   shoulda-matchers
   spring

@@ -1,0 +1,14 @@
+footer {
+  width: 100%;
+  border-top: 1px solid $header-border-color;
+  margin-bottom: 5px;
+  .row {
+    div {
+      margin-top: 2px;
+    }
+  }
+
+  .social-icon {
+    max-height: 40px;
+  }
+}

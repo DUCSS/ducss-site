@@ -12,4 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require foundation
+//= require_tree ./site
+
+$(function() {
+  $(document).foundation({
+    tab: {
+      callback: function () {
+        $(window).resize();
+      }
+    }
+  })
+});

@@ -26,11 +26,6 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
 
-  config.paperclip_defaults = {
-    path: ':rails_root/dev_uploads/:class/:id/:attachment/:filename',
-    url: ':rails_root/dev_uploads/:class/:id/:attachment/:filename'
-  }
-
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

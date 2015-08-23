@@ -19,6 +19,11 @@ RSpec.describe Event, :type => :model do
 
   it { is_expected.to validate_presence_of(:date) }
 
+  it { is_expected.to have_attached_file :thumbnail }
+  it { is_expected.to validate_attachment_presence :thumbnail }
+  it { is_expected.to validate_attachment_content_type(:thumbnail).
+                      allowing 'image/jpg', 'image/jpeg', 'image/png', 'image/gif' }
+
   describe 'upcoming events' do
     let!(:upcoming) { Array.new(3) { create(:event) } }
     before do

@@ -10,6 +10,36 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+@import "variables";
+@import "foundation_and_overrides";
+@import "contact";
+@import "events";
+@import "footer";
+@import "header";
+@import "home";
+@import "kaminari";
+@import "responsive-calendar";
+
+a, a:visited {
+  text-decoration: none;
+}
+
+.main-container {
+  min-height: 350px;
+  height: auto;
+  width: 84%;
+  max-width: 2000px;
+  margin-left: 8%;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Droid Sans', sans-serif;
+}
+
+@media screen and (max-width: 640px) {
+  .main-container {
+    width: 95%;
+    margin-left: 2.5%;
+  }
+}

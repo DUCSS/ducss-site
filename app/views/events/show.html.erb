@@ -1,19 +1,28 @@
 <% provide :title, @event.title %>
 <% provide :description, @event.description %>
-<section id="event">
-  <h1><%= @event.title %></h1>
+<section class="events-container" id="event">
 
   <div class="row">
-    <div class="event">
+    <div class="small-12 left columns">
+      <h1><%= @event.title %></h1>
+    </div>
+  </div>
+  <div class="row event-container">
+    <div class="small-12 medium-8 columns">
+      <div class="thumbnail">
+        <%= image_tag @event.thumbnail.url(:normal) %>
+      </div>
+    </div>
+    <div class="small-12 medium-4 columns">
+      <div class="info">
+        <span><%= @event.location %></span>
+      </div>
       <div class="date">
         <span class="day"><%= @event.date.day %></span>
         <span class="month"><%= @event.date.strftime "%b" %></span>
+        <span class="time"><%= @event.date.strftime "%H:%M" %></span>
       </div>
-      <div class="info">
-        <span><%= @event.location %></span>
-        <span><%= @event.date.strftime "%H:%M" %></span>
-      </div>
+      <%= @event.description.html_safe %>
     </div>
-    <%= @event.description.html_safe %>
   </div>
 </section>
