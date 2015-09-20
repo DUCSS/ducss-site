@@ -1,0 +1,40 @@
+<div class="content" id="contact">
+  <%= form_for @message, url: send_message_path(@message) do |f| %>
+    <% if flash[:email] %>
+      <div class="success"><%= flash[:email] %></div>
+    <% end %>
+    <% if @message.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@message.errors.count, "error") %> prevented your email from being sent:</h2>
+
+        <ul>
+          <% @message.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <input type="text" name="text" style="display: none;">
+    <div class="control-group">
+      <%= f.label :name %>
+      <div class="controls">
+        <%= f.text_field :name, placeholder: "Name" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :email %>
+      <div class="controls">
+        <%= f.email_field :email, placeholder: "Email" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :body %>
+      <div class="controls">
+        <%= f.text_area :body, rows: 5, cols: 40, class: "textarea", placeholder: "Write your message here..." %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.submit "Send Message" %>
+    </div>
+  <% end %>
+</div>

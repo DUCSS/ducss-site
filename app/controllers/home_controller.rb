@@ -7,7 +7,10 @@ class HomeController < ApplicationController
   def email
     @message = Message.new(message_params)
     if @message.valid?
-      ContactMailer.contact_email(@message).deliver_now
+      if !params[:text].present?
+        ContactMailer.contact_email(@message).deliver_now
+      end
+      # Sneaky. Only send email if hidden field blank but still make it look like it sent
       flash[:email] = "Email sent"
       redirect_to root_path(anchor: "contact")
     else
