@@ -3,7 +3,7 @@ class ContactMailer < ActionMailer::Base
   default to: '"DUCSS" <ducss@csc.tcd.ie>'
 
   def contact_email(message)
-    @body = ActionView::Base.full_sanitizer.sanitize message.body
+    @body = message.body
     mail(subject: "DUCSS site email from #{message.name}",
         from: "\"#{message.name}\" <#{message.email}>", reply_to: message.email)
   end
