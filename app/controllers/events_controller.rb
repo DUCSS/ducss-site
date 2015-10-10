@@ -1,5 +1,10 @@
 class EventsController < ApplicationController
+
   def index
+    @events = Event.order(date: :desc)
+  end
+
+  def upcoming
     @events = Event.upcoming.page(params[:page])
     respond_to do |format|
       format.json { render json: @events }

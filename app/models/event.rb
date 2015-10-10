@@ -13,6 +13,10 @@ class Event < ActiveRecord::Base
   validates_attachment_content_type :thumbnail, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 
+  def self.highlighted
+    order(:date).last
+  end
+
   def self.upcoming
     where('date > ?', DateTime.now).order(date: :asc)
   end

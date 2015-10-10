@@ -19,19 +19,15 @@
 @import 'home';
 @import 'contact-modal';
 
-.bottom {
-  padding-top: $header-height * 1.5;
-  background-color: $background-color;
-  min-height: 100vh;
-
-}
-
 .width-constraint {
   width: 100%;
   max-width: 1024px;
   height: 100%;
   margin: auto;
+}
 
+.content-container {
+  margin-top: $header-height * 1.5;
 }
 
 .fade-out {
