@@ -14,7 +14,7 @@ class Event < ActiveRecord::Base
 
 
   def self.highlighted
-    order(:date).last
+    upcoming.order(:date).last
   end
 
   def self.upcoming

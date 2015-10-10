@@ -6,7 +6,7 @@
     <div>
       <div class="logo-text">&lt;ducss/&gt;</div>
       <div class="landing-nav">
-        <%= link_to "Events" , upcoming_events_path %>
+        <%= link_to "Events" , all_events_path %>
         <a onclick="document.getElementById('contact-button').click()">Contact</a>
       </div>
     </div>
@@ -15,40 +15,14 @@
 </div>
 
 <div class="row home-content content-container">
-  <div class="small-12 columns main-event">
-    <div class="card">
-      <img src="http://ducss.ie/system/events/thumbnails/000/000/002/normal/learn-to-code-banner.jpg?1443999317" />
-      <div class="content">
-        <h3>Main Event</h3>
-        Main event description
-      </div>
+  <% if @highlighted_event %>
+    <div class="small-12 columns main-event">
+      <%= render 'layouts/event_card', event: @highlighted_event %>
     </div>
-  </div>
-  <div class="small-12 medium-4 columns section">
-    <div class="card">
-      <img src="http://ducss.ie/system/events/thumbnails/000/000/001/normal/xbone-1.png?1443999208" />
-      <div class="content">
-        <h3>Room</h3>
-        We have a room.
-      </div>
+  <% end %>
+  <% @services.each do | service | %>
+    <div class="small-12 medium-4 columns section">
+      <%= render 'service_card', service: service %>
     </div>
-  </div>
-  <div class="small-12 medium-4 columns section">
-    <div class="card">
-      <img src="http://ducss.ie/system/events/thumbnails/000/000/002/normal/learn-to-code-banner.jpg?1443999317" />
-      <div class="content">
-        <h3>Classes</h3>
-        We teach you things.
-      </div>
-    </div>
-  </div>
-  <div class="small-12 medium-4 columns section">
-    <div class="card">
-      <img src="http://ducss.ie/system/events/thumbnails/000/000/001/normal/xbone-1.png?1443999208" />
-      <div class="content">
-        <h3>Events</h3>
-        We do events.
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>

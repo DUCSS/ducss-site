@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @highlighted_event = Event.highlighted
     @services = Service.all
     @message = Message.new
   end
@@ -14,6 +15,7 @@ class HomeController < ApplicationController
       flash[:email] = "Email sent"
       redirect_to root_path
     else
+      @highlighted_event = Event.highlighted
       @services = Service.all
       render :index
     end

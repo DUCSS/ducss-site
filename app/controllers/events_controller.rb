@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
   def index
+    @highlighted_event = Event.highlighted
     @events = Event.order(date: :desc)
   end
 

@@ -1,1 +1,17 @@
-<%= @events %>
+<div class="row content-container all-events">
+  <% if @highlighted_event %>
+    <h1>Upcoming Event</h1>
+    <div class="small-12 columns main-event">
+      <%= render 'layouts/event_card', event: @highlighted_event %>
+    </div>
+  <% end %>
+  <h1>All Events</h1>
+  <% @events.each_with_index do | event, index | %>
+    <!-- events[0] is the highlighted event -->
+    <% if index != 0 %>
+      <div class="small-12 medium-4 columns section">
+        <%= render 'layouts/event_card', event: event %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
