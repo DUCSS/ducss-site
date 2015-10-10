@@ -1,28 +1,54 @@
-<ul class="tabs horizontal row" data-tab data-options="deep_linking:true;">
-  <li class="small-6 medium-3 end text-center tab-title active"><a href="#services">Services</a></li>
-  <li class="small-6 medium-3 end text-center tab-title"><a href="#contact">Contact Us</a></li>
-</ul>
-<div class="tabs-content">
-  <div class="content active" id="services">
-    <ul class="services-orbit" data-orbit data-options="bullets:true;variable_height:true;timer:false;slide_number:false;">
-      <% @services.each_with_index do |service, index| %>
-        <% if index == 0 %>
-          <li class="active" data-orbit-slide="<%= index %>">
-        <% else %>
-          <li data-orbit-slide="<%= index %>">
-        <% end %>
-          <div class="row service">
-            <div class="small-12 columns text-center">
-              <%= image_tag(service.image.url(:normal), alt: service.title.downcase) %>
-            </div>
-            <div class="small-10 small-centered columns text">
-              <h2><%= service.title %></h2>
-              <%= service.description.html_safe %>
-            </div>
-          </div>
-        </li>
-      <% end %>
-    </ul>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "home.js" %>
+<% end %>
+<div id="landing-page" class="landing-container">
+  <div class="text">
+    <div>
+      <div class="logo-text">&lt;ducss/&gt;</div>
+      <div class="landing-nav">
+        <%= link_to "Events" , upcoming_events_path %>
+        <a onclick="document.getElementById('contact-button').click()">Contact</a>
+      </div>
+    </div>
   </div>
-  <%= render 'contact_form' %>
+  <div class="particles" id="particles-js"></div>
+</div>
+
+<div class="row home-content">
+  <div class="small-12 columns main-event">
+    <div class="card">
+      <img src="http://ducss.ie/system/events/thumbnails/000/000/002/normal/learn-to-code-banner.jpg?1443999317" />
+      <div class="content">
+        <h3>Main Event</h3>
+        Main event description
+      </div>
+    </div>
+  </div>
+  <div class="small-12 medium-4 columns section">
+    <div class="card">
+      <img src="http://ducss.ie/system/events/thumbnails/000/000/001/normal/xbone-1.png?1443999208" />
+      <div class="content">
+        <h3>Room</h3>
+        We have a room.
+      </div>
+    </div>
+  </div>
+  <div class="small-12 medium-4 columns section">
+    <div class="card">
+      <img src="http://ducss.ie/system/events/thumbnails/000/000/002/normal/learn-to-code-banner.jpg?1443999317" />
+      <div class="content">
+        <h3>Classes</h3>
+        We teach you things.
+      </div>
+    </div>
+  </div>
+  <div class="small-12 medium-4 columns section">
+    <div class="card">
+      <img src="http://ducss.ie/system/events/thumbnails/000/000/001/normal/xbone-1.png?1443999208" />
+      <div class="content">
+        <h3>Events</h3>
+        We do events.
+      </div>
+    </div>
+  </div>
 </div>

@@ -13,33 +13,30 @@
  */
 @import "variables";
 @import "foundation_and_overrides";
-@import "contact";
-@import "events";
-@import "footer";
-@import "header";
-@import "home";
-@import "kaminari";
-@import "responsive-calendar";
+@import 'normalize';
+@import 'landing';
+@import 'header';
+@import 'home';
+@import 'contact-modal';
 
-a, a:visited {
-  text-decoration: none;
+.bottom {
+  padding-top: $header-height * 1.5;
+  background-color: $background-color;
+  min-height: 100vh;
+
 }
 
-.main-container {
-  min-height: 350px;
-  height: auto;
-  width: 84%;
-  max-width: 2000px;
-  margin-left: 8%;
+.width-constraint {
+  width: 100%;
+  max-width: 1024px;
+  height: 100%;
+  margin: auto;
+
 }
 
-body, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Droid Sans', sans-serif;
+.fade-out {
+  -webkit-transition: opacity 4s !important;
+  transition: opacity 4s !important;
+  opacity: 0;
 }
 
-@media screen and (max-width: 640px) {
-  .main-container {
-    width: 95%;
-    margin-left: 2.5%;
-  }
-}

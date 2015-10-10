@@ -23,7 +23,7 @@ RSpec.describe HomeController, :type => :controller do
           expect(ActionMailer::Base.deliveries.length).to eq 0
         end
         it { is_expected.to set_flash[:email].to 'Email sent' }
-        it { is_expected.to redirect_to root_path(anchor: "contact") }
+        it { is_expected.to redirect_to root_path }
       end
 
       context 'without the sneaky field present' do
@@ -35,7 +35,7 @@ RSpec.describe HomeController, :type => :controller do
           expect(ActionMailer::Base.deliveries.length).to eq 1
         end
         it { is_expected.to set_flash[:email].to 'Email sent' }
-        it { is_expected.to redirect_to root_path(anchor: "contact") }
+        it { is_expected.to redirect_to root_path }
       end
     end
 

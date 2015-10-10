@@ -13,14 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree ./site
+//= require particles.min
+//= require header
 
-$(function() {
-  $(document).foundation({
-    tab: {
-      callback: function () {
-        $(window).resize();
-      }
-    }
-  })
-});
+$(function(){ $(document).foundation(); });

@@ -1,0 +1,35 @@
+.reveal-modal {
+  outline: none;
+  position: fixed;
+  top: 10vh !important;
+  .modal {
+    .message-text {
+      min-height: 30vh;
+    }
+    input, textarea {
+      border-radius: 2px;
+    }
+    input[type=submit] {
+      background-color: white;
+      border: none;
+      font-size: 1.3rem;
+    }
+    input[type=text], input[type=email], textarea {
+      border: none;
+      border-bottom: 1px solid $input-border-color;
+      box-shadow: none;
+      &:focus {
+        background-color: white;
+      }
+    }
+    label {
+      visibility: hidden;
+    }
+  }
+}
+
+@media screen and(max-width: $small-breakpoint) {
+  .reveal-modal {
+    min-height: 0px;
+  }
+}

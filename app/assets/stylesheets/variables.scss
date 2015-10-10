@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'FairviewRegular';
+  src: asset-url('fonts/fairview_regular.eot');
+  src: asset-url('fonts/fairview_regular.eot?#iefix') format('embedded-opentype'),
+  asset-url('fonts/fairview_regular.woff2') format('woff2'),
+  asset-url('fonts/fairview_regular.woff') format('woff'),
+  asset-url('fonts/fairview_regular.ttf') format('truetype'),
+  asset-url('fonts/fairview_regular.svg#fairviewregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$ducss-orange: #ff9636;
+$drop-shadow-color: #ccc;
+$background-color: #f5f5f5;
+$link-color: #555;
+$input-border-color: #555;
+$hr-color: $drop-shadow-color;
+$hr-transparent-color: rgba(0,0,0,0);
+$card-dropshadow-color: rgba(0, 0, 0, 0.25);
+
+$header-height: 65px;
+
+$small-breakpoint: 640px;
+$medium-breakpoin: 640px;
+

@@ -12,7 +12,7 @@ class HomeController < ApplicationController
       end
       # Sneaky. Only send email if hidden field blank but still make it look like it sent
       flash[:email] = "Email sent"
-      redirect_to root_path(anchor: "contact")
+      redirect_to root_path
     else
       @services = Service.all
       render :index
