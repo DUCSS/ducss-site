@@ -3,6 +3,10 @@ class EventsController < ApplicationController
   def index
     @highlighted_event = Event.highlighted
     @events = Event.order(date: :desc)
+    respond_to do |format|
+      format.json { render json: @events }
+      format.html { render :index, locals: { type: 'All' }}
+    end
   end
 
   def upcoming
