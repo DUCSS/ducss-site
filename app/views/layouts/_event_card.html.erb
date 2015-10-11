@@ -2,7 +2,13 @@
   <%= link_to (image_tag event.thumbnail.url(:normal)), show_event_path(event.slug) %>
   <div class="content">
     <h3><%= link_to event.title, show_event_path(event.slug) %></h3>
-    <%= HTML_Truncator.truncate(event.description, 30).html_safe %>
+    <div class="meta">
+      <div class="location"><%= event.location %></div>
+      <div class="date"><%= event.date.day %> <%= event.date.strftime "%b" %></div>
+    </div>
+    <div class="text">
+      <%= HTML_Truncator.truncate(event.description, 30).html_safe %>
+    </div>
   </div>
 </div>
 
