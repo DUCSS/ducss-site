@@ -1,5 +1,9 @@
 <div class="modal">
-  <%= form_for @message, url: send_message_path(@message) do |f| %>
+  <%= form_for @message, url: send_message_path(@message), remote: true do |f| %>
+
+    <% if flash[:email] %>
+      <div class="success"><%= flash[:email] %></div>
+    <% end %>
 
     <% if @message.errors.any? %>
       <div id="error_explanation">
@@ -16,15 +20,21 @@
     <input type="text" name="text" style="display: none;">
 
     <%= f.label :name %>
-    <%= f.text_field :name, placeholder: "Name" %>
+    <%= f.text_field :name, placeholder: "Name", required: true %>
 
     <%= f.label :email %>
-    <%= f.email_field :email, placeholder: "Email" %>
+    <%= f.email_field :email, placeholder: "Email", required: true %>
 
     <%= f.label :body %>
-    <%= f.text_area :body, rows: 5, cols: 40, class: "textarea", placeholder: "Write your message here..." %>
+    <%= f.text_area :body, rows: 5, cols: 40, class: "textarea", placeholder: "Write your message here...", required: true %>
 
     <%= f.submit "Send" %>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   <% end %>
+  <div id="contact-success" class="success-message">
+    Sent
+  </div>
+  <div id="contact-failure" class="failure-message">
+    Unable to send email
+  </div>
 </div>

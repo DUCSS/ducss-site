@@ -7,17 +7,12 @@
     <div id="header-menu" class="nav-link-container">
       <hr>
       <%= link_to "Events", all_events_path %>
-      <a id="contact-button" href="#" data-reveal-id="contact-modal">Contact Us</a>
+      <a id="contact-button" href="#" data-reveal-id="contact">Contact Us</a>
     </div>
   </div>
 </div>
-<div class="flash">
-  <% if flash[:email] %>
-    <div class="success"><%= flash[:email] %></div>
-  <% end %>
-</div>
 
-<div id="contact-modal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+<div id="contact" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <% if @message %>
     <%= render "layouts/modal" %>
   <% end %>

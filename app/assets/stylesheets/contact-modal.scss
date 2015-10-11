@@ -18,12 +18,16 @@
       border: none;
       border-bottom: 1px solid $input-border-color;
       box-shadow: none;
-      &:focus {
-        background-color: white;
+      &:focus, &:-webkit-autofill {
+        -webkit-box-shadow:0 0 0 50px white inset;
       }
     }
     label {
       visibility: hidden;
+    }
+    .success-message, .failure-message {
+      display: none;
+      text-align: center;
     }
   }
 }

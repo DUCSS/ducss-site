@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   def index
     @highlighted_event = Event.highlighted
     @events = Event.order(date: :desc)
+    @message = Message.new
     respond_to do |format|
       format.json { render json: @events }
       format.html { render :index, locals: { type: 'All' }}
@@ -11,6 +12,7 @@ class EventsController < ApplicationController
 
   def upcoming
     @events = Event.upcoming.page(params[:page])
+    @message = Message.new
     respond_to do |format|
       format.json { render json: @events }
       format.html  {render :index, locals: { type: 'Upcoming' }}
@@ -19,6 +21,7 @@ class EventsController < ApplicationController
 
   def previous
     @events = Event.previous.page(params[:page])
+    @message = Message.new
     respond_to do |format|
       format.json { render json: @events }
       format.html { render :index, locals: { type: 'Previous' }}
@@ -27,5 +30,6 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by! slug: params[:slug]
+    @message = Message.new
   end
 end

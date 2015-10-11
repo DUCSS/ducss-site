@@ -11,13 +11,9 @@ class HomeController < ApplicationController
       if !params[:text].present?
         ContactMailer.contact_email(@message).deliver_now
       end
-      # Sneaky. Only send email if hidden field blank but still make it look like it sent
-      flash[:email] = "Email sent"
-      redirect_to root_path
+      render nothing: true, status: :ok
     else
-      @highlighted_event = Event.highlighted
-      @services = Service.all
-      render :index
+      render nothing: true, status: :unprocessable_entity
     end
   end
 
