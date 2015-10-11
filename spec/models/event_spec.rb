@@ -50,7 +50,7 @@ RSpec.describe Event, :type => :model do
     subject { Event.highlighted }
 
     context 'when there are future events' do
-      let!(:events) { Array.new(3) { create(:event, date: 5.days.from_now)} << create(:event, date: 10.days.from_now)}
+      let!(:events) { Array.new(3) { create(:event, date: 5.days.from_now)} << create(:event, date: 1.days.from_now)}
       it { is_expected.to match(events.last) }
     end
 
