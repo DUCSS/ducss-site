@@ -45,4 +45,20 @@ RSpec.describe Event, :type => :model do
 
     it { is_expected.to match_array previous }
   end
+
+  describe 'highlighted event' do
+    subject { Event.highlighted }
+
+    context 'when there are future events' do
+      let!(:events) { Array.new(3) { create(:event, date: 5.days.from_now)} << create(:event, date: 10.days.from_now)}
+      it { is_expected.to match(events.last) }
+    end
+
+    context 'when there are no future events' do
+      before do
+        Array.new(3) { create(:event, date: 3.days.ago) }
+      end
+      it { is_expected.to be_nil }
+    end
+  end
 end
