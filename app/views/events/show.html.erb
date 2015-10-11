@@ -1,28 +1,7 @@
 <% provide :title, @event.title %>
 <% provide :description, @event.description %>
-<section class="events-container" id="event">
-
-  <div class="row">
-    <div class="small-12 left columns">
-      <h1><%= @event.title %></h1>
-    </div>
+<div class="row content-container">
+  <div class="small-12 columns main-event">
+    <%= render 'layouts/event_card', event: @event %>
   </div>
-  <div class="row event-container">
-    <div class="small-12 medium-8 columns">
-      <div class="thumbnail">
-        <%= image_tag @event.thumbnail.url(:normal) %>
-      </div>
-    </div>
-    <div class="small-12 medium-4 columns">
-      <div class="info">
-        <span><%= @event.location %></span>
-      </div>
-      <div class="date">
-        <span class="day"><%= @event.date.day %></span>
-        <span class="month"><%= @event.date.strftime "%b" %></span>
-        <span class="time"><%= @event.date.strftime "%H:%M" %></span>
-      </div>
-      <%= @event.description.html_safe %>
-    </div>
-  </div>
-</section>
+</div>
