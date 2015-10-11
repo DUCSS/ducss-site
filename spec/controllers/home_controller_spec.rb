@@ -22,8 +22,7 @@ RSpec.describe HomeController, :type => :controller do
         it 'should not deliver an email' do
           expect(ActionMailer::Base.deliveries.length).to eq 0
         end
-        it { is_expected.to set_flash[:email].to 'Email sent' }
-        it { is_expected.to redirect_to root_path }
+        it { is_expected.to respond_with :ok }
       end
 
       context 'without the sneaky field present' do
@@ -34,8 +33,7 @@ RSpec.describe HomeController, :type => :controller do
         it 'should deliver an email' do
           expect(ActionMailer::Base.deliveries.length).to eq 1
         end
-        it { is_expected.to set_flash[:email].to 'Email sent' }
-        it { is_expected.to redirect_to root_path }
+        it { is_expected.to respond_with :ok }
       end
     end
 
@@ -47,7 +45,7 @@ RSpec.describe HomeController, :type => :controller do
       it 'should not deliver an email' do
         expect(ActionMailer::Base.deliveries.length).to be 0
       end
-      it { is_expected.to render_template :index }
+      it { is_expected.to respond_with :unprocessable_entity }
     end
   end
 end
