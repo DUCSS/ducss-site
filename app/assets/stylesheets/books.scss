@@ -1,0 +1,27 @@
+.book-list {
+  margin: 0;
+  li {
+    a {
+      background-color: white !important;
+      box-shadow: 1px 1px 10px -1px $drop-shadow-color;
+      position: relative;
+      z-index: 1;
+    }
+    .content {
+      margin: 0;
+      .book-cover {
+        img {
+          max-height: 300px;
+        }
+      }
+      .availability {
+        width: 100%;
+        text-align: right;
+        margin-top: 15px;
+      }
+      .false {
+        color: red;
+      }
+    }
+  }
+}

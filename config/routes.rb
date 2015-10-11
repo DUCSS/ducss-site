@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get "events/upcoming" => "events#upcoming", as: :upcoming_events
   get "events/previous" => "events#previous", as: :previous_events
   get "events/event/:slug" => "events#show", as: :show_event
+  get "library" => "books#index", as: :library
   mount RailsAdmin::Engine => '/admin/dashboard', as: 'rails_admin'
 end
