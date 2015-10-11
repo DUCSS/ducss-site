@@ -1,0 +1,30 @@
+<div class="content-container">
+  <div class="width-constraint">
+    <ul class="accordion book-list" data-accordion>
+      <% @books.each do |book| %>
+        <li class="accordion-navigation">
+          <a href="#book<%= book.id %>">
+            <%= book.title %>
+          </a>
+          <div id="book<%= book.id %>" class="content row">
+            <div class="small-12 medium-5 small-only-text-center columns book-cover">
+              <%= image_tag book.image_url %>
+            </div>
+            <div class="small-12 medium-7 columns book-details">
+              <h2><%= book.title %></h2>
+              <h3><%= book.author %></h3>
+              <p><%= book.synopsis %></p>
+              <p class="availability <%= book.available %>">
+                <% if book.available %>
+                  Available
+                <% else %>
+                  On loan
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
