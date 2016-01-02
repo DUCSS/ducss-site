@@ -17,6 +17,7 @@
 @import 'landing';
 @import 'header';
 @import 'home';
+@import 'footer';
 @import 'contact-modal';
 
 .width-constraint {
@@ -48,6 +49,9 @@
   .content {
     padding: 10px;
     h3 {
+      border-bottom: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: $ducss-orange;
     }
     .meta {
       margin-bottom: 5px;

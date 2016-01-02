@@ -1,0 +1,32 @@
+footer {
+	text-align: center;
+	ul {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		list-style: none;
+		width: 180px;
+		display: inline-block;
+
+		.fb-icon {
+			float: right;
+		}
+
+		.twitter-icon {
+			float: left;
+		}
+
+		img {
+			width: 60px;
+			opacity: .5;
+			-webkit-transition: opacity .8s;
+		    -webkit-transform: translateZ(0) scale(1.0, 1.0); /* Safari bug fix, it moves by one pixel on hover without it ¯\_(ツ)_/¯ */
+		    -moz-transition: opacity .8s;
+		    -o-transition: opacity .8s;
+		    transition: opacity .8s;
+		}
+
+		img:hover {
+			opacity: 1;
+		}
+	}
+}
