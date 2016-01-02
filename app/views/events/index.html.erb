@@ -1,4 +1,8 @@
 <% provide :title, "#{type} Events" %>
+<script>
+  var d = document.getElementById("event-nav");
+  d.className = d.className + " current";
+</script>
 <div class="row content-container all-events">
   <% if @highlighted_event %>
     <h1>Upcoming Event</h1>
