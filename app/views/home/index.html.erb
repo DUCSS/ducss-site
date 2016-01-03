@@ -20,6 +20,8 @@
 
 <div class="row home-content content-container">
   <% if @highlighted_event %>
+    <div class="small-12 columns services-header">Our Next Event</div>
+    <hr>
     <div class="small-12 columns main-event">
       <%= render 'layouts/event_card', event: @highlighted_event %>
     </div>

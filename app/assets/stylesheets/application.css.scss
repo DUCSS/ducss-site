@@ -28,7 +28,7 @@
 }
 
 .content-container {
-  padding-top: $header-height * 1.5;
+  padding-top: $header-height * 1.2;
 }
 
 .fade-out {
@@ -41,10 +41,10 @@
   background-color: white;
   box-shadow: 0 12px 15px 0 $card-dropshadow-color;
   border-radius: 2px;
+  
   img {
-    box-shadow: 0 0 12px -1px $drop-shadow-color;
-    margin: 2%;
-    width: 96%;
+    margin: 3%;
+    width: 94%;
   }
   .content {
     padding: 10px;
@@ -62,19 +62,22 @@
 .section {
   margin-bottom: 10px;
 }
+
 .main-event {
   margin-bottom: 20px;
+
   img {
-    width: 100%;
+    margin: 2%;
+    width: 96%;
   }
 }
 
 @media screen and(max-width: $small-breakpoint) {
   .card {
-    padding-top: 10px;
     img {
       width: initial;
       display: block;
+      padding: 3%;
       margin-left: auto;
       margin-right: auto;
     }

@@ -5,15 +5,25 @@
 </script>
 <div class="row content-container all-events">
   <% if @highlighted_event %>
-    <h1>Upcoming Event</h1>
+    <div class="small-12 columns services-header">Our Next Event</div>
+    <hr>
     <div class="small-12 columns main-event">
       <%= render 'layouts/event_card', event: @highlighted_event %>
     </div>
   <% end %>
-  <h1><%= type %> Events</h1>
+  <% if type == 'All' %>
+  <div class="small-12 columns event-headers">
+    <div class="previous-events-link-header"><%= link_to "Previous", previous_events_path %></div>
+    <div class="all-events-header"><%= type %> Events</div>
+    <div class="upcoming-events-link-header"><%= link_to "Upcoming", upcoming_events_path %></div>
+  </div>
+  <% else %>
+  <div class="small-12 columns services-header"><%= type %> Events</div>
+  <% end %>
+  <hr>
   <% @events.each_with_index do | event, index | %>
     <!-- events[0] is the highlighted event -->
-    <% if index != 0 %>
+    <% if index != 0 || !@highlighted_event %>
       <div class="small-12 medium-4 columns section">
         <%= render 'layouts/event_card', event: event %>
       </div>

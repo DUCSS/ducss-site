@@ -2,6 +2,80 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1.3rem;
+  color: #444;
+  margin-top: 20px;
+}
+
+.event-headers {
+
+  text-align: center;
+
+  div {
+    display: inline-block;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1.3rem;
+    color: #444;
+    margin-top: 20px;
+  }
+
+  .previous-events-link-header {
+    float: left;
+    font-size: .8rem;
+    margin-top: 27px;
+
+    a {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+    }
+   
+    a:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      width: 0;
+      background: transparent;
+      transition: width .5s ease, background-color .5s ease;
+    }
+     
+    a:hover:after {
+        width: 100%;
+        background: $ducss-orange;
+    }
+  }
+
+  .upcoming-events-link-header {
+    float: right;
+    font-size: .8rem;
+    margin-top: 27px;
+
+    a {
+      display: inline-block;
+    }
+
+    a:after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 0;
+      background: transparent;
+      transition: width .5s ease, background-color .5s ease;
+    }
+
+    a:hover:after {
+    width: 100%;
+    background: $ducss-orange;
+    }
+  }
 }
 
 hr {
