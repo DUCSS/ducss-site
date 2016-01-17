@@ -1,11 +1,8 @@
-<% content_for :javascript_includes do %>
-  <%= javascript_include_tag "home.js" %>
-<% end %>
 <script>
   var d = document.getElementById("home-nav");
   d.className = d.className + " current";
 </script>
-<div id="landing-page" class="landing-container">
+<!--<div id="landing-page" class="landing-container">
   <div class="text">
     <div>
       <div class="logo-text">&lt;ducss/&gt;</div>
@@ -16,7 +13,7 @@
     </div>
   </div>
   <div class="particles" id="particles-js"></div>
-</div>
+</div>-->
 
 <div class="row home-content content-container">
   <% if @highlighted_event %>
