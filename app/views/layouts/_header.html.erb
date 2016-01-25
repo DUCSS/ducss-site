@@ -1,13 +1,22 @@
-<header>
-  <div class="row">
-    <div class="small-12 medium-4 large-2 columns text-center">
-      <%= link_to image_tag("nav-logo.png", size: '156x57', alt: "DUCSS", id: "logo"), root_path %>
+<div id="header" class="header">
+  <div class="width-constraint">
+    <%= link_to image_tag("nav-logo.png", alt: "DUCSS", id: "logo"), root_path, class: "nav-logo" %>
+    <div class="hamburger">
+      <%= image_tag "hamburger.png", onclick: "toggleMenu()" %>
     </div>
-    <div class="small-12 medium-8 large-10 columns small-only-text-center text-right nav-links">
-      <%= link_to "Home", root_path, class: "header-link" %>
-      <%= link_to "Events", upcoming_events_path, class: "header-link" %>
-      <%= link_to "Contact Us", root_path(anchor: "contact"), class: "header-link" %>
+    <div id="header-menu" class="nav-link-container">
+      <hr>
+      <ul class="snip1217">
+        <li id="home-nav"><%= link_to "Home", root_path(fromHome: true) %></li>
+        <li id="event-nav"><%= link_to "Events", all_events_path %></li>
+        <li id="contact-nav"><a id="contact-button" href="#" data-reveal-id="contact">Contact Us</a></li>
+      </ul>
     </div>
-    <div class="small-hidden medium-1 columns"></div>
   </div>
-</header>
+</div>
+
+<div id="contact" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <% if @message %>
+    <%= render "layouts/modal" %>
+  <% end %>
+</div>

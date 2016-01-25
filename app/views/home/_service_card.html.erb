@@ -1,0 +1,8 @@
+<div class="card">
+  <%= image_tag(service.image.url(:normal), alt: service.title.downcase) %>
+  <div class="content">
+    <h3><%= service.title %></h3>
+    <%= service.description.html_safe %>
+  </div>
+</div>
+

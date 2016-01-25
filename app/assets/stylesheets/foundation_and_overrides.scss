@@ -56,6 +56,7 @@
 
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
+
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
 
@@ -86,7 +87,7 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-$font-family-sans-serif: $font-stack;
+// $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 // $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
@@ -879,7 +880,7 @@ $font-family-sans-serif: $font-stack;
 // We use these to control the caption styles
 // $orbit-container-bg: none;
 // $orbit-caption-bg: rgba(51,51,51, 0.8);
-// $orbit-caption-font-color: #808080;
+// $orbit-caption-font-color: $white;
 // $orbit-caption-font-size: rem-calc(14);
 // $orbit-caption-position: "bottom"; // Supported values: "bottom", "under"
 // $orbit-caption-padding: rem-calc(10 14);
@@ -906,8 +907,8 @@ $font-family-sans-serif: $font-stack;
 // $orbit-slide-number-padding: rem-calc(5);
 
 // Hide controls on small
-$orbit-nav-hide-for-small: false;
-$orbit-bullet-hide-for-small: false;
+// $orbit-nav-hide-for-small: true;
+// $orbit-bullet-hide-for-small: true;
 // $orbit-timer-hide-for-small: true;
 
 // Graceful Loading Wrapper and preloader
@@ -966,7 +967,7 @@ $orbit-bullet-hide-for-small: false;
 // $panel-padding: rem-calc(20);
 
 // We use these to set default font colors
-// $panel-font-color: red;
+// $panel-font-color: $oil;
 // $panel-font-color-alt: $white;
 
 // $panel-header-adjust: true;
@@ -1301,11 +1302,11 @@ $orbit-bullet-hide-for-small: false;
 // $include-html-tabs-classes: $include-html-classes;
 
 // $tabs-navigation-padding: rem-calc(16);
-$tabs-navigation-bg-color: transparent ;
-$tabs-navigation-active-bg-color: $header-border-color;
+// $tabs-navigation-bg-color: $silver  ;
+// $tabs-navigation-active-bg-color: $white;
 // $tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -6%);
-$tabs-navigation-font-color: $ducss-orange;
-$tabs-navigation-active-font-color: white;
+// $tabs-navigation-font-color: $jet;
+// $tabs-navigation-active-font-color: $tabs-navigation-font-color;
 // $tabs-navigation-font-size: rem-calc(16);
 // $tabs-navigation-font-family: $body-font-family;
 

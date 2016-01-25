@@ -1,28 +1,42 @@
-<ul class="tabs horizontal row" data-tab data-options="deep_linking:true;">
-  <li class="small-6 medium-3 end text-center tab-title active"><a href="#services">Services</a></li>
-  <li class="small-6 medium-3 end text-center tab-title"><a href="#contact">Contact Us</a></li>
-</ul>
-<div class="tabs-content">
-  <div class="content active" id="services">
-    <ul class="services-orbit" data-orbit data-options="bullets:true;variable_height:true;timer:false;slide_number:false;">
-      <% @services.each_with_index do |service, index| %>
-        <% if index == 0 %>
-          <li class="active" data-orbit-slide="<%= index %>">
-        <% else %>
-          <li data-orbit-slide="<%= index %>">
-        <% end %>
-          <div class="row service">
-            <div class="small-12 columns text-center">
-              <%= image_tag(service.image.url(:normal), alt: service.title.downcase) %>
-            </div>
-            <div class="small-10 small-centered columns text">
-              <h2><%= service.title %></h2>
-              <%= service.description.html_safe %>
-            </div>
-          </div>
-        </li>
-      <% end %>
-    </ul>
+<script>
+  var d = document.getElementById("home-nav");
+  d.className = d.className + " current";
+
+</script>
+
+<% if !@landingPage %>
+  <% content_for :javascript_includes do %>
+    <%= javascript_include_tag "home.js" %>
+  <% end %>
+  <div class="landing-page">
+    <div class="title">
+      <p>&lt;ducss/&gt;</p>
+      <ul>
+        <li><a href="#" class="home-landing">home</a></li>
+        <li><%= link_to "Events" , all_events_path %></li>
+        <li><a onclick="document.getElementById('contact-button').click()">Contact</a></li>
+      </ul>
+    </div>
+    <div class="background">
+    </div>
+    <div class="background-right-fix">
+    </div>
   </div>
-  <%= render 'contact_form' %>
+<% end %>
+
+<div class="row home-content content-container">
+  <% if @highlighted_event %>
+    <div class="small-12 columns services-header">Our Next Event</div>
+    <hr>
+    <div class="small-12 columns main-event">
+      <%= render 'layouts/event_card', event: @highlighted_event %>
+    </div>
+  <% end %>
+  <div class="small-12 columns services-header">Our Services</div>
+  <hr>
+  <% @services.each do | service | %>
+    <div class="small-12 medium-4 columns section">
+      <%= render 'service_card', service: service %>
+    </div>
+  <% end %>
 </div>

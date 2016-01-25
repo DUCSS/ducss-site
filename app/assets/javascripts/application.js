@@ -13,14 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree ./site
+//= require particles.min
+//= require header
 
-$(function() {
-  $(document).foundation({
-    tab: {
-      callback: function () {
-        $(window).resize();
-      }
-    }
-  })
+$(function(){ $(document).foundation(); });
+$(document).ready(function() {
+  $("#new_message").on("ajax:success", function(e, data, status, xhr) {
+    $("#contact-success").css("display", "block");
+    $("#contact-failure").css("display", "none");
+    setTimeout(function() {
+      $("#contact-success").css("display", "none");
+    }, 3000);
+  }).on("ajax:error", function(e, xhr, status, error) {
+    $("#contact-success").css("display", "none");
+    $("#contact-failure").css("display", "block");
+    setTimeout(function() {
+      $("#contact-failure").css("display", "none");
+    }, 3000);
+  });
 });

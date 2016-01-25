@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
 
   has_attached_file :thumbnail, styles: { normal: "851x315"}
-  paginates_per 4
+  paginates_per 10
 
   LOWER_HYPHEN_CASE_REGEX = /\A[a-z0-9]+(\-([a-z0-9])+)*\Z/
   validates :title, presence: true, length: { maximum: 128 }
@@ -13,8 +13,12 @@ class Event < ActiveRecord::Base
   validates_attachment_content_type :thumbnail, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 
+  def self.highlighted
+    upcoming.last
+  end
+
   def self.upcoming
-    where('date > ?', DateTime.now).order(date: :asc)
+    where('date > ?', DateTime.now).order(date: :desc)
   end
 
   def self.previous

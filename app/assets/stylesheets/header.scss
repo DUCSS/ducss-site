@@ -1,33 +1,147 @@
-header {
+.header {
   width: 100%;
-  border-bottom: 1px solid $header-border-color;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-family: $font-stack;
-  text-transform: uppercase;
+  min-height: $header-height;
+  position: fixed;
+  top: 0;
+  box-shadow: 1px 1px 10px -1px $drop-shadow-color;
+  z-index: 1;
+  background-color: $background-color;
 
-  .nav-links {
-    margin-top: 18px;
-    a {
-      margin-left: 20px;
-      color: $link-color;
-      &:hover {
-        color: $link-color;
-        padding-bottom: 5px;
-        border-bottom: 1px solid $ducss-orange;
-      }
+  .nav-logo {
+    height: 100%;
+    width: auto;
+    float: left;
+    margin-left: 10px;
+    img {
+      height: 50px;
+      width: auto;
+      margin-top: 7.5px;
     }
+  }
+
+  .nav-link-container {
+    float: right;
+    height: 100%;
+    margin-right: 10px;
+    hr {
+      display: none;
+    }
+
+    .snip1217 {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-top: 5px;
+      margin-bottom: 0px;
+    }
+    
+    .snip1217 * {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: all 0.35s ease;
+      transition: all 0.35s ease;
+    }
+
+    .snip1217 li {
+      display: inline-block;
+      list-style: outside none none;
+      margin: 0.5em 1.2em;
+      padding: 0;
+    }
+
+    .snip1217 a {
+      padding: 0.3em 0;
+      color: rgba(255, 255, 255, 0.5);
+      position: relative;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 4px;
+      font-size: 1.1rem;
+    }
+
+    .snip1217 a:before,
+    .snip1217 a:after {
+      height: 3px;
+      position: absolute;
+      content: '';
+      -webkit-transition: all 0.40s ease;
+      transition: all 0.40s ease;
+      background-color: $ducss-orange;
+      width: 0;
+    }
+
+    .snip1217 a:before {
+      top: 0;
+      left: 0;
+    }
+
+    .snip1217 a:after {
+      bottom: 0;
+      right: 0;
+    }
+
+    .snip1217 a:hover,
+    .snip1217 .current a {
+      color: #333 !important;
+    }
+
+    .snip1217 a:hover:before,
+    .snip1217 .current a:before,
+    .snip1217 a:hover:after,
+    .snip1217 .current a:after {
+      width: 100%;
+    }
+  }
+
+  .hamburger {
+    display: none;
   }
 }
 
-@media screen and (max-width: 1024px) {
-    .nav-links {
-      margin-top: 22px !important;
-    }
+.flash {
+  position: fixed;
+  top: $header-height * 1.5;
+  margin: 0;
 }
 
-@media screen and (max-width: 640px) {
-    .nav-links {
-      margin-top: 0px !important;
+@media screen and(max-width: $small-breakpoint) {
+  .nav-link-container {
+    float: none;
+    width: 100%;
+    text-align: center;
+    margin-right: 0 !important;
+    display: none;
+    hr {
+      display: block !important;
+      height: 1px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      width: 100%;
+      border: none;
+      background-image: -webkit-linear-gradient(0deg, $hr-transparent-color, $hr-color, $hr-transparent-color);
     }
+    a {
+      margin: 0;
+      margin-bottom: 5px;
+      font-size: 1.2em !important;
+    }
+  }
+
+  .hamburger {
+    height: $header-height;
+    display: block !important;
+    float: right;
+    margin-right: 10px;
+    img {
+      height: $header-height / 2;
+      margin-top: $header-height / 4;
+    }
+  }
+
+}
+
+@media screen and(min-width: $small-breakpoint + 1) {
+  .nav-link-container {
+    display: block !important;
+  }
 }
