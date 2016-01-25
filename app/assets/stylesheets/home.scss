@@ -10,7 +10,6 @@
 }
 
 .event-headers {
-
   text-align: center;
 
   div {
@@ -85,3 +84,21 @@ hr {
   background-image: -webkit-linear-gradient(0deg, $hr-transparent-color, $hr-color, $hr-transparent-color);
 }
 
+@media screen and(max-width: $small-breakpoint) {
+  .event-headers {
+    div {
+      font-size: 4vw;
+      margin-bottom: 3px;
+    }
+
+    .previous-events-link-header {
+      font-size: 2vw;
+      margin-top: 24px;
+    }
+
+    .upcoming-events-link-header {
+      font-size: 2vw;
+      margin-top: 24px;
+    }
+  }
+}

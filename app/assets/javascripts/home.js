@@ -1,6 +1,8 @@
 $(document).ready(function() {
     $("#header").css('display', 'none');
     $("footer").css('display', 'none');
+    $("#header").css('visibility', 'hidden');
+    $("footer").css('visibility', 'hidden');
     $(".content-container").css('display', 'none');
     $("body").css('background', '0');
 
@@ -37,6 +39,8 @@ $(document).ready(function() {
       setTimeout(function () {
         $("#header").css('display', 'inline');
         $("footer").css('display', 'block');
+        $("#header").css('visibility', 'visible');
+        $("footer").css('visibility', 'visible');
         $(".content-container").css('display', 'block');
         $("body").css('background', 'white');
 
@@ -58,7 +62,7 @@ function fadeTriangle(triangleSwitch) {
     var opacity = Math.random();
 
     if(triangleSwitch === 0) {
-      	var timeToFade = 4000 * Math.abs($(".left-triangle." + id).css("opacity") - opacity) + (total * 20);
+      	var timeToFade = 6000 * Math.abs($(".left-triangle." + id).css("opacity") - opacity) + (total * 20);
       	$(".left-triangle." + id).fadeTo(timeToFade, opacity, function() {
         	total+=4;
         	if(total < fadeLimit) {
@@ -69,7 +73,7 @@ function fadeTriangle(triangleSwitch) {
         	} 
       	});
     } else {
-      	var timeToFade = 4000 * Math.abs($(".right-triangle." + id).css("opacity") - opacity) + (total * 20);
+      	var timeToFade = 6000 * Math.abs($(".right-triangle." + id).css("opacity") - opacity) + (total * 20);
       	$(".right-triangle." + id).fadeTo(timeToFade, opacity, function() {
         	total+=4;
         	if(total < fadeLimit) {
