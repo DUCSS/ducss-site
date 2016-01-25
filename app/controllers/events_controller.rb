@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   end
 
   def upcoming
-    @events = Event.upcoming.page(params[:page])
+    @events = Event.upcoming
     @message = Message.new
     respond_to do |format|
       format.json { render json: @events }
@@ -20,7 +20,7 @@ class EventsController < ApplicationController
   end
 
   def previous
-    @events = Event.previous.page(params[:page])
+    @events = Event.previous
     @message = Message.new
     respond_to do |format|
       format.json { render json: @events }

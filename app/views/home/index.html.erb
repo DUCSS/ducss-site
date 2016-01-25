@@ -1,19 +1,28 @@
 <script>
   var d = document.getElementById("home-nav");
   d.className = d.className + " current";
+
 </script>
-<!--<div id="landing-page" class="landing-container">
-  <div class="text">
-    <div>
-      <div class="logo-text">&lt;ducss/&gt;</div>
-      <div class="landing-nav">
-        <%= link_to "Events" , all_events_path %>
-        <a onclick="document.getElementById('contact-button').click()">Contact</a>
-      </div>
+
+<% if !@landingPage %>
+  <% content_for :javascript_includes do %>
+    <%= javascript_include_tag "home.js" %>
+  <% end %>
+  <div class="landing-page">
+    <div class="title">
+      <p>&lt;ducss/&gt;</p>
+      <ul>
+        <li><a href="#" class="home-landing">home</a></li>
+        <li><%= link_to "Events" , all_events_path %></li>
+        <li><a onclick="document.getElementById('contact-button').click()">Contact</a></li>
+      </ul>
+    </div>
+    <div class="background">
+    </div>
+    <div class="background-right-fix">
     </div>
   </div>
-  <div class="particles" id="particles-js"></div>
-</div>-->
+<% end %>
 
 <div class="row home-content content-container">
   <% if @highlighted_event %>

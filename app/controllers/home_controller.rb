@@ -3,6 +3,7 @@ class HomeController < ApplicationController
     @highlighted_event = Event.highlighted
     @services = Service.all
     @message = Message.new
+    @landingPage = params[:fromHome]
   end
 
   def email

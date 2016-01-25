@@ -1,16 +1,85 @@
-particlesJS.load('particles-js', 'assets/particles.json');
+$(document).ready(function() {
+    $("#header").css('display', 'none');
+    $("footer").css('display', 'none');
+    $(".content-container").css('display', 'none');
+    $("body").css('background', '0');
 
-var hidden = false;
+	$(".background").css({
+	  	"height" : $(window).innerHeight()
+	});
 
-// sorcery to hide the nav on iOS/safari when you
-// do the bouncy scroll thing at the top of the page
-// :wand: :sparkles:
-$(document).on('scroll', function(){
-  if($(window).scrollTop() < 50 && !hidden) {
-    $("#header").css('visibility', 'hidden');
-    hidden = true;
-  } else if ($(window).scrollTop() >= 50 && hidden) {
-    $("#header").css('visibility', 'visible');
-    hidden = false;
-  }
+	$(".title").css({
+	  	"background" : "rgba(255, 139, 15, 0.93)"
+	});
+
+	for(i = 0; i < noOfSquares; i++) {
+	  	$(".background").append("<div class='square'><div class='left-triangle " + i + "'></div><div class='right-triangle " + i + "'></div></div>");
+	}
+
+	for(i = 0; i < ($(window).height() / 80); i++) {
+	  	$(".background-right-fix").append("<div class='square background-right-fix-square'><div class='left-triangle " + i + "'></div><div class='right-triangle " + i + "'></div></div>");
+	}
+
+    fadeTriangle(Math.random() < 0.5 ? 0 : 1);
+    fadeTriangle(Math.random() < 0.5 ? 0 : 1);
+
+	$(".home-landing").click(function() {
+    endFade = true;
+      for(i = 0; i < noOfSquares; i++) {
+        $(".left-triangle." + i).fadeTo(1, 0, function() {
+          $(".left-triangle." + i).remove();
+        });
+        $(".right-triangle." + i).fadeTo(1, 0, function() {
+          $(".right-triangle." + i).remove();
+        });
+      }
+
+      setTimeout(function () {
+        $("#header").css('display', 'inline');
+        $("footer").css('display', 'block');
+        $(".content-container").css('display', 'block');
+        $("body").css('background', 'white');
+
+        $(".title").fadeTo(500, 0, function() {
+          $(".landing-page").remove();
+        });
+      }, 1000);
+	});
 } );
+
+var endFade = false;
+var noOfSquares = (($(window).width() / 80) * ($(window).height() / 80)) + 14;
+var total = 0;
+var fadeLimit = noOfSquares * (14/8);
+
+function fadeTriangle(triangleSwitch) {
+  if(endFade === false) {
+    var id = Math.floor(Math.random() * noOfSquares);
+    var opacity = Math.random();
+
+    if(triangleSwitch === 0) {
+      	var timeToFade = 4000 * Math.abs($(".left-triangle." + id).css("opacity") - opacity) + (total * 20);
+      	$(".left-triangle." + id).fadeTo(timeToFade, opacity, function() {
+        	total+=4;
+        	if(total < fadeLimit) {
+        		fadeTriangle(Math.random() < 0.5 ? 0 : 1);
+          		fadeTriangle(Math.random() < 0.5 ? 0 : 1);
+          		fadeTriangle(Math.random() < 0.5 ? 0 : 1);
+          		fadeTriangle(Math.random() < 0.5 ? 0 : 1);
+        	} 
+      	});
+    } else {
+      	var timeToFade = 4000 * Math.abs($(".right-triangle." + id).css("opacity") - opacity) + (total * 20);
+      	$(".right-triangle." + id).fadeTo(timeToFade, opacity, function() {
+        	total+=4;
+        	if(total < fadeLimit) {
+          		fadeTriangle(Math.random() < 0.5 ? 0 : 1);
+          		fadeTriangle(Math.random() < 0.5 ? 0 : 1);
+          		fadeTriangle(Math.random() < 0.5 ? 0 : 1);
+          		fadeTriangle(Math.random() < 0.5 ? 0 : 1);
+        	}
+      	});
+    }
+  }
+}
+

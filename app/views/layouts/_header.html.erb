@@ -7,7 +7,7 @@
     <div id="header-menu" class="nav-link-container">
       <hr>
       <ul class="snip1217">
-        <li id="home-nav"><%= link_to "Home", root_path %></li>
+        <li id="home-nav"><%= link_to "Home", root_path(fromHome: true) %></li>
         <li id="event-nav"><%= link_to "Events", all_events_path %></li>
         <li id="contact-nav"><a id="contact-button" href="#" data-reveal-id="contact">Contact Us</a></li>
       </ul>

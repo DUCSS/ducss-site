@@ -9,19 +9,21 @@ footer {
 
 		.fb-icon {
 			float: right;
+			margin-right: 2px;
 		}
 
 		.twitter-icon {
 			float: left;
+			margin-left: 2px;
 		}
 
 		.fb-icon:hover {
-			margin-right: 5px;
+			margin-right: 0px;
 		}
 
 
 		.twitter-icon:hover {
-			margin-left: 5px;
+			margin-left: 0px;
 		}
 
 		img {
@@ -37,7 +39,7 @@ footer {
 
 		img:hover {
 			opacity: 1;
-			width: 62px;
+			width: 64px;
 		}
 	}
 }

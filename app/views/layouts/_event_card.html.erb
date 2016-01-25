@@ -4,11 +4,10 @@
     <h3><%= link_to event.title, show_event_path(event.slug) %></h3>
     <div class="meta">
       <div class="location"><%= event.location %></div>
-      <div class="date"><%= event.date.strftime "%-d %b %H:%M" %></div>
+      <div class="date"><%= event.date.strftime "%-d %b %Y %H:%M" %></div>
     </div>
     <div class="text">
       <%= HTML_Truncator.truncate(event.description, 30).html_safe %>
     </div>
   </div>
 </div>
-
