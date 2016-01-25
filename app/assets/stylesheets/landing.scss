@@ -7,10 +7,10 @@
   z-index: 10;
   position: absolute;
 
-  -webkit-transition: background 1.5s ease-in;
-    -moz-transition: background 1.5s ease-in;
-    -o-transition: background 1.5s ease-in;
-    transition: background 1.5s ease-in;
+  -webkit-transition: background 2s ease-in;
+    -moz-transition: background 2s ease-in;
+    -o-transition: background 2s ease-in;
+    transition: background 2s ease-in;
 }
 
 .title p {
@@ -27,7 +27,7 @@
 .title ul {
   margin-top: -9vw;
   list-style: none;
-  margin-left: 10.8vw;
+  margin-left: 10.1vw;
   padding-left: 0px;
 }
 
@@ -79,10 +79,10 @@
   border-color: transparent transparent $ducss-orange transparent ;
   opacity: 0;
 
-  -webkit-transition: opacity 1s ease-in;
-    -moz-transition: opacity 1s ease-in;
-    -o-transition: opacity 1s ease-in;
-    transition: opacity 1s ease-in;
+  -webkit-transition: opacity .5s ease-in;
+    -moz-transition: opacity .5s ease-in;
+    -o-transition: opacity .5s ease-in;
+    transition: opacity .5s ease-in;
 }
 
 .left-triangle {
@@ -95,10 +95,10 @@
   display: block;   
   float: left;
 
-  -webkit-transition: opacity 1s ease-in;
-    -moz-transition: opacity 1s ease-in;
-    -o-transition: opacity 1s ease-in;
-    transition: opacity 1s ease-in;
+  -webkit-transition: opacity .5s ease-in;
+    -moz-transition: opacity .5s ease-in;
+    -o-transition: opacity .5s ease-in;
+    transition: opacity .5s ease-in;
 }
 
 .square {
