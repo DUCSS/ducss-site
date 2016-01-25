@@ -44,7 +44,7 @@ $(document).ready(function() {
         $(".content-container").css('display', 'block');
         $("body").css('background', 'white');
 
-        $(".title").fadeTo(500, 0, function() {
+        $(".title").fadeTo(1000, 0, function() {
           $(".landing-page").remove();
         });
       }, 1000);
@@ -54,7 +54,7 @@ $(document).ready(function() {
 var endFade = false;
 var noOfSquares = (($(window).width() / 80) * ($(window).height() / 80)) + 14;
 var total = 0;
-var fadeLimit = noOfSquares * (14/8);
+var fadeLimit = noOfSquares * (15/16);
 
 function fadeTriangle(triangleSwitch) {
   if(endFade === false) {
