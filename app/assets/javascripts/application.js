@@ -15,7 +15,13 @@
 //= require foundation
 //= require header
 
-$(function(){ $(document).foundation(); });
+$(function() {
+  $(document).foundation({
+    equalizer: {
+      equalize_on_stack: true
+    }
+  });
+});
 $(document).ready(function() {
   $("#new_message").on("ajax:success", function(e, data, status, xhr) {
     $("#contact-success").css("display", "block");

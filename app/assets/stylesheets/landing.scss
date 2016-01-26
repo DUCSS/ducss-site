@@ -8,9 +8,9 @@
   position: absolute;
 
   -webkit-transition: background 2s ease-in;
-    -moz-transition: background 2s ease-in;
-    -o-transition: background 2s ease-in;
-    transition: background 2s ease-in;
+  -moz-transition: background 2s ease-in;
+  -o-transition: background 2s ease-in;
+  transition: background 2s ease-in;
 }
 
 .title p {
@@ -76,13 +76,13 @@
   height: 0;
   border-style: solid;
   border-width: 0 0 80px 80px;
-  border-color: transparent transparent $ducss-orange transparent ;
+  border-color: transparent transparent $ducss-orange transparent;
   opacity: 0;
 
   -webkit-transition: opacity .5s ease-in;
-    -moz-transition: opacity .5s ease-in;
-    -o-transition: opacity .5s ease-in;
-    transition: opacity .5s ease-in;
+  -moz-transition: opacity .5s ease-in;
+  -o-transition: opacity .5s ease-in;
+  transition: opacity .5s ease-in;
 }
 
 .left-triangle {
@@ -96,9 +96,9 @@
   float: left;
 
   -webkit-transition: opacity .5s ease-in;
-    -moz-transition: opacity .5s ease-in;
-    -o-transition: opacity .5s ease-in;
-    transition: opacity .5s ease-in;
+  -moz-transition: opacity .5s ease-in;
+  -o-transition: opacity .5s ease-in;
+  transition: opacity .5s ease-in;
 }
 
 .square {
@@ -157,6 +157,6 @@
   }
 
   @-moz-document url-prefix() {
-      .title p { margin-top: 9vw; }
+    .title p { margin-top: 9vw; }
   }
 }

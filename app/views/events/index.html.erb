@@ -21,12 +21,18 @@
   <div class="small-12 columns services-header"><%= type %> Events</div>
   <% end %>
   <hr>
-  <% @events.each_with_index do | event, index | %>
-    <!-- events[0] is the highlighted event -->
-    <% if index != 0 || !@highlighted_event %>
-      <div class="small-12 medium-4 columns section">
-        <%= render 'layouts/event_card', event: event %>
-      </div>
+  <!-- events[0] is the highlighted event -->
+  <div class="row" data-equalizer data-equalizer-mq="medium-up">
+    <% @events.each_with_index do |event, index| %>
+      <% if event == @events.last %>
+        <div class="small-12 medium-4 columns end section" data-equalizer-watch>
+          <%= render 'layouts/event_card', event: event %>
+        </div>
+      <% elsif index != 0 || !@highlighted_event %>
+        <div class="small-12 medium-4 columns section" data-equalizer-watch>
+          <%= render 'layouts/event_card', event: event %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
