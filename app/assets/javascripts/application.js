@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require particles.min
 //= require header
 
 $(function(){ $(document).foundation(); });
