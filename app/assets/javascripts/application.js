@@ -13,14 +13,27 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree ./site
+//= require header
 
 $(function() {
   $(document).foundation({
-    tab: {
-      callback: function () {
-        $(window).resize();
-      }
+    equalizer: {
+      equalize_on_stack: true
     }
-  })
+  });
+});
+$(document).ready(function() {
+  $("#new_message").on("ajax:success", function(e, data, status, xhr) {
+    $("#contact-success").css("display", "block");
+    $("#contact-failure").css("display", "none");
+    setTimeout(function() {
+      $("#contact-success").css("display", "none");
+    }, 3000);
+  }).on("ajax:error", function(e, xhr, status, error) {
+    $("#contact-success").css("display", "none");
+    $("#contact-failure").css("display", "block");
+    setTimeout(function() {
+      $("#contact-failure").css("display", "none");
+    }, 3000);
+  });
 });

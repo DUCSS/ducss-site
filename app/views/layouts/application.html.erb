@@ -7,6 +7,7 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application" %>
+    <%= yield :javascript_includes %>
     <%= csrf_meta_tags %>
 
     <title><%= full_title(yield(:title)) %></title>

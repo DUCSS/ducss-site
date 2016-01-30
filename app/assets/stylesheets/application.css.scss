@@ -13,33 +13,74 @@
  */
 @import "variables";
 @import "foundation_and_overrides";
-@import "contact";
-@import "events";
-@import "footer";
-@import "header";
-@import "home";
-@import "kaminari";
-@import "responsive-calendar";
+@import 'normalize';
+@import 'landing';
+@import 'header';
+@import 'home';
+@import 'footer';
+@import 'contact-modal';
 
-a, a:visited {
-  text-decoration: none;
+.width-constraint {
+  width: 100%;
+  max-width: 1024px;
+  height: 100%;
+  margin: auto;
 }
 
-.main-container {
-  min-height: 350px;
-  height: auto;
-  width: 84%;
-  max-width: 2000px;
-  margin-left: 8%;
+.content-container {
+  padding-top: $header-height * 1.2;
 }
 
-body, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Droid Sans', sans-serif;
+.fade-out {
+  -webkit-transition: opacity 4s !important;
+  transition: opacity 4s !important;
+  opacity: 0;
 }
 
-@media screen and (max-width: 640px) {
-  .main-container {
-    width: 95%;
-    margin-left: 2.5%;
+.card {
+  background-color: white;
+  box-shadow: 0 12px 15px 0 $card-dropshadow-color;
+  border-radius: 2px;
+  
+  img {
+    margin: 3%;
+    width: 94%;
+  }
+  .content {
+    padding: 10px;
+    h3 {
+      border-bottom: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: $ducss-orange;
+    }
+    .meta {
+      margin-bottom: 5px;
+    }
   }
 }
+
+.section {
+  margin-bottom: 10px;
+}
+
+.main-event {
+  margin-bottom: 20px;
+
+  img {
+    margin: 2%;
+    width: 96%;
+  }
+}
+
+@media screen and(max-width: $small-breakpoint) {
+  .card {
+    img {
+      width: initial;
+      display: block;
+      padding: 3%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+

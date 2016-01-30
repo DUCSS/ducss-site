@@ -1,0 +1,9 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none !important;
+  color: $link-color !important;
+}

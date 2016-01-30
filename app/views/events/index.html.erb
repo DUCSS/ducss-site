@@ -1,28 +1,34 @@
-<%= javascript_include_tag 'event' %>
 <% provide :title, "#{type} Events" %>
-<div class="events-container">
-  <div class="row">
-    <div class="small-12 text-center columns">
-      <ul class="button-group radius">
-        <li>
-          <%= link_to "Upcoming Events", upcoming_events_path, class: (type == 'Upcoming')? 'active button': 'button' %>
-        </li>
-        <li>
-          <%= link_to "Previous Events", previous_events_path, class: (type == 'Previous')? 'active button': 'button' %>
-        </li>
-      </ul>
+<script>
+  var d = document.getElementById("event-nav");
+  d.className = d.className + " current";
+  $("#header").css("display", "inline");
+</script>
+<div class="row content-container all-events">
+  <% if @highlighted_event %>
+    <div class="small-12 columns services-header">Our Next Event</div>
+    <hr>
+    <div class="small-12 columns main-event">
+      <%= render 'layouts/event_card', event: @highlighted_event %>
     </div>
+  <% end %>
+  <% if type == 'All' %>
+  <div class="small-12 columns event-headers">
+    <div class="previous-events-link-header"><%= link_to "Previous", previous_events_path %></div>
+    <div class="all-events-header"><%= type %> Events</div>
+    <div class="upcoming-events-link-header"><%= link_to "Upcoming", upcoming_events_path %></div>
   </div>
-  <div class="tabs-content">
-    <div class="events-listing" id="events">
-      <div class="row">
-        <div class="small-12 medium-7 columns">
-          <%= render 'listing' %>
-        </div>
-        <div class="show-for-medium-up medium-5 columns calendar-container">
-          <%= render 'calendar' %>
-        </div>
+  <% else %>
+  <div class="small-12 columns services-header"><%= type %> Events</div>
+  <% end %>
+  <hr>
+
+  <div class="row" data-equalizer data-equalizer-mq="medium-up">
+    <% @events.each_with_index do |event, index| %>
+      <div class="small-12 medium-4 columns end section" data-equalizer-watch>
+        <%= render 'layouts/event_card', event: event %>
       </div>
-    </div>
+    <% end %>
   </div>
+  <%= paginate @events %>
 </div>

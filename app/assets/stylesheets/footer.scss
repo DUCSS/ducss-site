@@ -1,14 +1,45 @@
 footer {
-  width: 100%;
-  border-top: 1px solid $header-border-color;
-  margin-bottom: 5px;
-  .row {
-    div {
-      margin-top: 2px;
-    }
-  }
+  text-align: center;
+  ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    list-style: none;
+    width: 180px;
+    display: inline-block;
+    margin-left: 0px;
 
-  .social-icon {
-    max-height: 40px;
+    .fb-icon {
+      float: right;
+      margin-right: 2px;
+     }
+
+    .twitter-icon {
+      float: left;
+      margin-left: 2px;
+    }
+
+    .fb-icon:hover {
+      margin-right: 0px;
+    }
+
+
+    .twitter-icon:hover {
+      margin-left: 0px;
+    }
+
+    img {
+      width: 60px;
+      opacity: .8;
+      -webkit-transition: all .4s;
+      -webkit-transform: translateZ(0) scale(1.0, 1.0); /* Safari bug fix, it moves by one pixel on hover without it ¯\_(ツ)_/¯ */
+      -moz-transition: all .4s;
+      -o-transition: all .4s;
+      transition: all .4s;
+
+      &:hover {
+        opacity: 1;
+        width: 64px;
+      }
+    }
   }
 }
