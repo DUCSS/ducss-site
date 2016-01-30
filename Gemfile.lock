@@ -86,8 +86,6 @@ GEM
       activesupport (>= 4.1.0)
     haml (4.0.6)
       tilt
-    html_truncator (0.4.1)
-      nokogiri (~> 1.5)
     i18n (0.7.0)
     jbuilder (2.3.0)
       activesupport (>= 3.0.0, < 5)
@@ -243,7 +241,6 @@ DEPENDENCIES
   factory_girl_rails
   ffaker
   foundation-rails
-  html_truncator
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
