@@ -7,6 +7,9 @@
   z-index: 1;
   background-color: $background-color;
 
+  /* To avoid the header flashing on the landing page load! */
+  display: none;
+
   .nav-logo {
     height: 100%;
     width: auto;

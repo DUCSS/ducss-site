@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 
   def index
     @highlighted_event = Event.highlighted
-    @events = Event.order(date: :desc)
+    @events = Event.order(date: :desc).page(params[:page])
     @message = Message.new
     respond_to do |format|
       format.json { render json: @events }
@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   end
 
   def upcoming
-    @events = Event.upcoming
+    @events = Event.upcoming.page(params[:page])
     @message = Message.new
     respond_to do |format|
       format.json { render json: @events }
@@ -20,7 +20,7 @@ class EventsController < ApplicationController
   end
 
   def previous
-    @events = Event.previous
+    @events = Event.previous.page(params[:page])
     @message = Message.new
     respond_to do |format|
       format.json { render json: @events }

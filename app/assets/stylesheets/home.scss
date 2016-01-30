@@ -77,6 +77,23 @@
   }
 }
 
+.pagination {
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+
+  .current {
+    color: $ducss-orange;
+  }
+
+  .page {
+    margin-right: 5px;
+  }
+}
+
 hr {
   height: 1px;
   width: 100%;

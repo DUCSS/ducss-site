@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  $("#header").css('display', 'none');
   $("footer").css('display', 'none');
   $("#header").css('visibility', 'hidden');
   $("footer").css('visibility', 'hidden');
