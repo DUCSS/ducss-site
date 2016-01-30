@@ -9,7 +9,7 @@
     <div class="small-12 columns services-header">Our Next Event</div>
     <hr>
     <div class="small-12 columns main-event">
-      <%= render 'layouts/event_card', event: @highlighted_event, description_length: 20 %>
+      <%= render 'layouts/event_card', event: @highlighted_event, summary: true %>
     </div>
   <% end %>
   <% if type == 'All' %>
@@ -26,7 +26,7 @@
   <div class="row" data-equalizer data-equalizer-mq="medium-up">
     <% @events.each_with_index do |event, index| %>
       <div class="small-12 medium-4 columns end section" data-equalizer-watch>
-        <%= render 'layouts/event_card', event: event, description_length: 20  %>
+        <%= render 'layouts/event_card', event: event, summary: true %>
       </div>
     <% end %>
   </div>

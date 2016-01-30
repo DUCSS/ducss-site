@@ -50,9 +50,6 @@ gem 'rails_admin'
 gem 'rmagick'
 gem 'paperclip'
 
-# Rails built-in truncate isn't good for HTML
-gem 'html_truncator'
-
 # Use puma as the app server
 gem 'puma'
 
