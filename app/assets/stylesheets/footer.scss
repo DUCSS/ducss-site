@@ -1,5 +1,6 @@
 footer {
   text-align: center;
+
   ul {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -10,35 +11,28 @@ footer {
 
     .fb-icon {
       float: right;
-      margin-right: 2px;
      }
 
     .twitter-icon {
       float: left;
-      margin-left: 2px;
-    }
-
-    .fb-icon:hover {
-      margin-right: 0px;
-    }
-
-
-    .twitter-icon:hover {
-      margin-left: 0px;
     }
 
     img {
       width: 60px;
       opacity: .8;
-      -webkit-transition: all .4s;
-      -webkit-transform: translateZ(0) scale(1.0, 1.0); /* Safari bug fix, it moves by one pixel on hover without it ¯\_(ツ)_/¯ */
-      -moz-transition: all .4s;
-      -o-transition: all .4s;
-      transition: all .4s;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
 
       &:hover {
         opacity: 1;
-        width: 64px;
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
       }
     }
   }
