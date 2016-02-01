@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby File.read('.ruby-version').strip
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
 # Use sqlite3 as the development database
@@ -10,6 +9,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'rspec_junit_formatter', '0.2.2'
 end
 
 group :test do
