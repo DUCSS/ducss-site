@@ -27,8 +27,8 @@
 
     <%= f.label :body %>
     <%= f.text_area :body, rows: 5, cols: 40, class: "textarea", placeholder: "Write your message here...", required: true %>
-    
-    <%= f.submit "Send" %>
+
+    <%= f.submit "Send", data: { disable_with: "Please wait..." } %>
 
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   <% end %>
