@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby File.read('.ruby-version').strip
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.2'
+gem 'rails', '~> 4.2.5'
 # Use sqlite3 as the development database
 group :development, :test do
   gem 'sqlite3'
