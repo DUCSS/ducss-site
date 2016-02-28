@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe EventsController, :type => :controller do
-  describe 'GET #upcoming' do
+  describe 'GET #index' do
     before { get :upcoming }
 
     it_behaves_like 'an HTML page'
