@@ -12,12 +12,12 @@
 
 @font-face {
   font-family: 'LasVegasFabulous';
-  src: url('fonts/las_vegas_fabulous-webfont.eot');
-  src: url('fonts/las_vegas_fabulous-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/las_vegas_fabulous-webfont.woff2') format('woff2'),
-       url('fonts/las_vegas_fabulous-webfont.woff') format('woff'),
-       url('fonts/las_vegas_fabulous-webfont.ttf') format('truetype'),
-       url('fonts/las_vegas_fabulous-webfont.svg#las_vegas_fabulous') format('svg');
+  src: asset-url('fonts/las_vegas_fabulous-webfont.eot');
+  src: asset-url('fonts/las_vegas_fabulous-webfont.eot?#iefix') format('embedded-opentype'),
+  asset-url('fonts/las_vegas_fabulous-webfont.woff2') format('woff2'),
+  asset-url('fonts/las_vegas_fabulous-webfont.woff') format('woff'),
+  asset-url('fonts/las_vegas_fabulous-webfont.ttf') format('truetype'),
+  asset-url('fonts/las_vegas_fabulous-webfont.svg#las_vegas_fabulous') format('svg');
   font-weight: normal;
   font-style: normal;
 }
