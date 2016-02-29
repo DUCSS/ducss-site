@@ -1,0 +1,39 @@
+<% provide :title, "Showcase" %>
+<div class="row content-container showcase-page">
+  <script>
+    var d = document.getElementById("showcase-nav");
+    d.className = d.className + " current";
+    $("#header").css("display", "inline");
+  </script>
+
+  <div class="logo">
+    <h2><span class="orange-text">&lt;</span>ducss<span class="orange-text">/&gt;</span></h2>
+    <h3>Showcase</h3>
+  </div>
+
+  <div class="info">
+    <p class="blurb">We all have great ideas for nifty side projects. In DUCSS we want to create a community where creators and tech enthusiasts can support and inspire one another. Our Technology Showcase events are held once a month for all our members to show off their work and ideas.  This page serves as a hub for our showcases and everyone that presents at them, so come and get a spark of inspiration or find out where to start!</p>
+    <p class="slack"><%= image_tag "slack_icon.png" %>Send us a message to join our slack team <a id="contact-button" href="#" data-reveal-id="contact"><span class="orange-text">DUCSSShowcase</span></a>!</p>
+  </div>
+  <% if @next_showcase %>
+    <div class="small-12 columns services-header">Our Next Showcase</div>
+    <hr>
+    <ul class="accordion" data-accordion>
+      <li class="accordion-navigation showcase">
+        <a class="showcase-header" style="cursor: default"><%= @next_showcase.date.strftime "%-d %B %Y %H:%M" %></a>
+      </li>
+    </ul>
+  <% end %>
+
+  <div class="small-12 columns services-header">Previous Showcases</div>
+  <hr>
+  <ul class="accordion" data-accordion>
+    <% @previous_showcases.each do |showcase| %>
+      <% if showcase == @previous_showcases.first %>
+        <%= render 'showcase', showcase: showcase, active: true %>
+      <% else %>
+        <%= render 'showcase', showcase: showcase, active: false %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

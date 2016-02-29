@@ -10,6 +10,18 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'LasVegasFabulous';
+  src: url('fonts/las_vegas_fabulous-webfont.eot');
+  src: url('fonts/las_vegas_fabulous-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/las_vegas_fabulous-webfont.woff2') format('woff2'),
+       url('fonts/las_vegas_fabulous-webfont.woff') format('woff'),
+       url('fonts/las_vegas_fabulous-webfont.ttf') format('truetype'),
+       url('fonts/las_vegas_fabulous-webfont.svg#las_vegas_fabulous') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 $ducss-orange: #ff9636;
 $drop-shadow-color: #ccc;
 $background-color: #f5f5f5;
@@ -22,5 +34,5 @@ $card-dropshadow-color: rgba(0, 0, 0, 0.25);
 $header-height: 65px;
 
 $small-breakpoint: 640px;
-$medium-breakpoin: 640px;
+$medium-breakpoint: 800px;
 

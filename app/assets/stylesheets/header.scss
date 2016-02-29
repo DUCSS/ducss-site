@@ -107,7 +107,7 @@
   margin: 0;
 }
 
-@media screen and(max-width: $small-breakpoint) {
+@media screen and(max-width: $medium-breakpoint) {
   .nav-link-container {
     float: none;
     width: 100%;
@@ -143,7 +143,7 @@
 
 }
 
-@media screen and(min-width: $small-breakpoint + 1) {
+@media screen and(min-width: $medium-breakpoint + 1) {
   .nav-link-container {
     display: block !important;
   }

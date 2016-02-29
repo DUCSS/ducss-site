@@ -1,0 +1,18 @@
+<% if active %>
+  <li class="accordion-navigation active showcase">
+    <a href="#showcase-panel<%= showcase.id %>" class="showcase-header"><%= showcase.date.strftime "%-d %B %Y" %></a>
+    <div id="showcase-panel<%= showcase.id %>" class="content active">
+<% else %>
+  <li class="accordion-navigation showcase">
+    <a href="#showcase-panel<%= showcase.id %>" class="showcase-header"><%= showcase.date.strftime "%-d %B %Y" %></a>
+    <div id="showcase-panel<%= showcase.id %>" class="content">
+<% end %>
+    <% showcase.showcase_items.each_with_index do |item, index| %>
+      <% if index.even? %>
+        <%= render 'showcase_item', item: item, left: true %>
+      <% else %>
+        <%= render 'showcase_item', item: item, left: false %>
+      <% end %>
+    <% end %>
+  </div>
+</li>
