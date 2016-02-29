@@ -177,7 +177,12 @@
 
 @media screen and(max-width: $small-breakpoint) {
   .showcase-page {
+    .info {
+      width: 90%;
+    }
+    
     .accordion {
+      width: 98%;
       .showcase {
         .content {
           padding-top: 10px;
@@ -207,12 +212,11 @@
           .item-content {
             .meta {
               .owner {
-                margin-left: 40%;
                 display: block;
                 margin-right: -4px;
                 a {
                   margin-right: 3px;
-                  float: right;
+                  float: none;
                 }
               }
             }
