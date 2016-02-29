@@ -56,6 +56,10 @@
   }
 }
 
+.reveal-modal-bg {
+  position: fixed;
+}
+
 @media screen and(max-width: $small-breakpoint) {
   .reveal-modal {
     min-height: 0px;
