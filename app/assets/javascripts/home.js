@@ -30,10 +30,10 @@ $(document).ready(function() {
     endFade = true;
     for (var i = 0; i < noOfSquares; i++) {
       // Fade each triangle and then remove it
-      $(".left-triangle." + i).fadeTo(200, 0, function() {
+      $(".left-triangle." + i).fadeTo(200, 0, 'linear', function() {
         $(".left-triangle." + i).remove();
       });
-      $(".right-triangle." + i).fadeTo(200, 0, function() {
+      $(".right-triangle." + i).fadeTo(200, 0, 'linear', function() {
         $(".right-triangle." + i).remove();
       });
     }
@@ -46,8 +46,8 @@ $(document).ready(function() {
       $(".content-container").css('display', 'block');
       $("body").css('background', 'white');
 
-      $(".title").fadeTo(600, 0, function() {
-        $(".landing-page").fadeTo(1000, 0, function() {
+      $(".title").fadeTo(600, 0, 'linear', function() {
+        $(".landing-page").fadeTo(300, 0, 'linear', function() {
           $(".landing-page").remove();
         });
       });
@@ -67,7 +67,7 @@ function fadeTriangle(triangleSwitch) {
 
     if (triangleSwitch === 0) {
       var timeToFade = 4000 * Math.abs($(".left-triangle." + id).css("opacity") - opacity) + (total * 20);
-      $(".left-triangle." + id).fadeTo(timeToFade, opacity, function() {
+      $(".left-triangle." + id).fadeTo(timeToFade, opacity, 'linear', function() {
         total += 3;
         if(total < fadeLimit) {
           fadeTriangle(Math.random() < 0.5 ? 0 : 1);
@@ -76,8 +76,8 @@ function fadeTriangle(triangleSwitch) {
         }
       });
     } else {
-      var timeToFade = 4000 * Math.abs($(".right-triangle." + id).css("opacity") - opacity) + (total * 20);
-      $(".right-triangle." + id).fadeTo(timeToFade, opacity, function() {
+      var timeToFade = 1000 * Math.abs($(".right-triangle." + id).css("opacity") - opacity) + (total * 20);
+      $(".right-triangle." + id).fadeTo(timeToFade, opacity, 'linear', function() {
         total += 3;
         if (total < fadeLimit) {
           fadeTriangle(Math.random() < 0.5 ? 0 : 1);
