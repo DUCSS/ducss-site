@@ -1,0 +1,34 @@
+<% provide :title, "Internships" %>
+<div class="row content-container internships-page">
+  <script>
+    var d = document.getElementById("internships-nav");
+    d.className = d.className + " current";
+    $("#header").css("display", "inline");
+  </script>
+
+  <div class="logo">
+    <h2><span class="orange-text">&lt;</span>ducss<span class="orange-text">/&gt;</span></h2>
+    <h3>Internships</h3>
+  </div>
+
+  <div class="info">
+    <p class="blurb">We're making a big effort helping our members advance to their careers by reaching out to employers and listing <strong>PAID</strong> internship positions from them here!
+    <br><br>
+    Our weekly email will keep you updated with new internships or you can check back yourself and see what's new!
+    </p>
+  </div>
+
+  <div class="small-12 columns services-header">Internships</div>
+  <hr>
+  <ul class="accordion" data-accordion>
+    <% if @internships.any? %>
+      <% @internships.each_with_index do |internship, index| %>
+          <%= render 'internships', internship: internship, active: true %>
+      <% end %>
+    <% else %>
+      <p>We currently haven't listed any open positions!</p>
+      <p>Are you hiring? <a href="mailto:ducss@csc.tcd.ie">Contact us</a> to post your internship</p>
+    <% end %>
+  </ul>
+  <%= paginate @internships %>
+</div>

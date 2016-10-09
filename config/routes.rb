@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     delete "admin/logout" => "devise/sessions#destroy", as: :destroy_user_session
   end
   get "showcase" => "showcase#index", as: :showcase
+  get "internships" => "internships#index", as: :internships
   get "events" => "events#index", as: :all_events
   get "events/upcoming" => "events#upcoming", as: :upcoming_events
   get "events/previous" => "events#previous", as: :previous_events
