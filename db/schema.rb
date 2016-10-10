@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225181958) do
+ActiveRecord::Schema.define(version: 20160727221819) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(version: 20160225181958) do
     t.string   "thumbnail_content_type"
     t.integer  "thumbnail_file_size"
     t.datetime "thumbnail_updated_at"
+  end
+
+  create_table "internships", force: :cascade do |t|
+    t.string   "company_name"
+    t.string   "company_logo_file_name"
+    t.string   "company_logo_content_type"
+    t.integer  "company_logo_file_size"
+    t.datetime "company_logo_updated_at"
+    t.string   "job_title"
+    t.string   "job_location"
+    t.string   "apply_link"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "services", force: :cascade do |t|

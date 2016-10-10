@@ -1,0 +1,155 @@
+.internships-page {
+
+  .blurb{
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .logo {
+    h2 {
+      text-align: center;
+      font-family: FairviewRegular;
+      font-size: 100px;
+      letter-spacing: 2px;
+
+      .orange-text {
+        color: $ducss-orange;
+      }
+    }
+
+    h3 {
+      text-align: center;
+      font-family: LasVegasFabulous;
+      font-size: 60px;
+      margin-top: -40px;
+    }
+  }
+
+  .accordion {
+    width: 90%;
+    margin: 0 auto;
+
+    .internship {
+      background-color: white;
+      box-shadow: 0 2px 10px 0 $card-dropshadow-color;
+      border-radius: 2px;
+      margin-bottom: 30px !important;
+
+      .internship-header {
+        background: $background-color;
+        letter-spacing: 2px;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        text-align: center;
+        border: 1px solid $ducss-orange;
+      }
+
+      .content {
+        border: 1px solid #999;
+        border-top: none;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      .internship-item {
+        display: flex;
+        width: 99%;
+        margin-bottom: 20px;
+
+        .image {
+          max-width: 200px;
+          margin: auto;
+          min-width: 130px;
+          margin-left: 20px;
+          margin-right: 20px;
+
+          img {
+            vertical-align: middle;
+            width: 100%;
+          }
+
+          .company-logo {
+            max-width: 200px;
+            max-height: 200px;
+          }
+        }
+
+        .item-content {
+          width: 78%;
+          height: 80%;
+          margin-top: 10px;
+
+          h3 {
+            border-bottom: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: $ducss-orange;
+            font-size: 1.4em;
+            letter-spacing: 3px;
+            width: 95%;
+            text-align: center;
+            margin-bottom: 20px;
+          }
+          h5 {
+            font-size: 1em;
+          }
+          .apply-container{
+            margin-top: 20px;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+
+            .apply-btn{
+              padding: .75rem 2rem;
+            }
+          }
+
+          a {
+            color: #fff !important;
+            transition: all ease-in-out .3s;
+            margin: 0 auto;
+          }
+
+          a .apply-btn {
+            background-color: $ducss-orange;
+            border: 1px solid $ducss-orange;
+          }
+
+          a:hover .apply-btn{
+            background-color: #fff;
+            color: $ducss-orange !important;
+          }
+
+          .text {
+            padding: 5px 0;
+            font-size: 15px;
+            text-align: justify
+          }
+        }
+      }
+
+
+    }
+  }
+
+  @media screen and(max-width: $small-breakpoint) {
+    .blurb{
+      margin-left: 25px;
+      margin-right: 25px;
+      text-align: center;
+    }
+    .accordion {
+      width: 95%;
+
+      .internship {
+        .content {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+
+        .internship-item {
+          margin-bottom: 30px;
+
+        }
+      }
+    }
+  }
+}
