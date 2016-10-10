@@ -13,7 +13,7 @@ class Internships < ActiveRecord::Base
   validates_attachment_content_type :company_logo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   def self.open_internships
-    Internships.order('created_at ASC').all
+    Internships.order('created_at DESC').all
   end
 
 end
