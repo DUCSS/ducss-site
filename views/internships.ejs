@@ -1,0 +1,43 @@
+<% include partials/header %>
+<div id="cont" class="container mt-5 text-center">
+  <h2 class="display-4 pt-2">Internships</h2>
+  <hr class="w-50">
+
+  <% internshipPosts.forEach(function(internshipPost){ %>
+    <div class="card mb-3 border-0" style="max-width: 100%;">
+      <div class="row no-gutters align-items-center internship-card">
+        <div class="col-md-4">
+          <img src="<%=internshipPost.thumbnail%>" class="card-img" alt="">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%=internshipPost.title%></h5>
+            <div class="row justify-content-center">
+                <p class="card-text description col-11 col-md-9"><%=internshipPost.description%></p>
+            </div>
+            <p class="card-text mt-3 ml-auto "><small class="text-muted"><%=internshipPost.datePosted%></small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="w-100 mt-0 mt-md-5 mb-5">
+
+
+
+    <% }); %>
+
+
+  </div>
+  <script>
+    var cont = document.querySelector("#cont");
+    console.log(cont);
+
+    document.querySelector(".navbar-toggler").addEventListener("click", () => {
+    cont.classList.toggle("movedown");
+    console.log(cont);
+    });
+  </script>
+
+  <% include partials/footer %>
+  <!-- // = internshipPost.description.replace(/(\w+\.\w+)/g, "<a href='$1' target='_blank'>$1</a>") -->

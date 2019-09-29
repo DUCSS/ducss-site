@@ -1,0 +1,24 @@
+{
+  "name": "ducss",
+  "version": "1.0.0",
+  "description": "ducss website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"NODE_ENV=production node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErnestKz/ducss.git"
+  },
+  "author": "Ernests Kuzņecovs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ErnestKz/ducss/issues"
+  },
+  "homepage": "https://github.com/ErnestKz/ducss#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}
