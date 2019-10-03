@@ -1,0 +1,7 @@
+deployment:
+  production:
+    branch: master
+    commands:
+      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
+      - git remote add dokku dokku@ducss.ie:ducss-site
+      - git push dokku master
