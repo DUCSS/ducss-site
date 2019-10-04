@@ -5,7 +5,7 @@ npm
 express
 ejs
 
-
-To run server:
-
-node app.js
+To Run Server:
+cd into ducss-site repo
+git remote add dokku dokku@duccs.ie:ducss-site
+git push dokku master
