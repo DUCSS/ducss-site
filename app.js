@@ -27,6 +27,12 @@ app.get('/contact', (req, res) => {
 
 // will be aranged so that id 0 is the very last internship on the webpage
 var internshipPosts = [
+  {thumbnail:  "https://tentulogo.com/wp-content/uploads/microsoft-logo.jpg"
+  ,title: "Microsoft Early Careers"
+  ,description: "Full-time software engineering and intern software engineering positions available at Microsoft. Information can be found here: https://www.facebook.com/ducss.ie/posts/2587060181571230 and https://drive.google.com/file/d/1bkwat6tp3osycgwMby7BImIKnEVVR31Z/view?usp=sharing"
+  ,datePosted: "15th October 2019"
+  ,id: 2	
+  },
   {thumbnail:  "https://www.computing.dcu.ie/sites/default/files/images/Arista%20Logo-7.preview.jpg"
   ,title: "Recruiting Graduate Software Engineers for 2020"
   ,description: "Arista Networks is looking for great Graduate/Intern Engineers interested in product development in C/C++ and Go to join the team in Dublin advancing the Software Defined Networking (SDN) revolution. For more info: https://drive.google.com/file/d/17c_Vgsh2fDGFhvogYDtWhZH-fdIvbvU8/view?usp=sharing"
