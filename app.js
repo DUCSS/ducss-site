@@ -10,7 +10,7 @@ const url = 'mongodb://basket:3448fc047e4657d16f6acb14b247b860@dokku-mongo-baske
 const client = new MongoClient(url);
 // Database Name
 const dbName = 'baseket';
-const internshipPosts;
+var internshipPosts;
 client.connect(function(err) {
   assert.equal(null, err);
   console.log("Connected successfully to server");
