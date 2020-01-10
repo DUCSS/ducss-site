@@ -9,7 +9,8 @@ const assert = require('assert');
 const url = process.env.MONGO_URL;
 var internshipPosts;
 MongoClient.connect(url, function(err, db) {
-  db.collection('internships').find().toArray(function (err, result) {
+  var dbo = db.db("basket");
+  dbo.collection('internships').find().toArray(function (err, result) {
     if (err) throw err
     internshipPosts = result;
   });
