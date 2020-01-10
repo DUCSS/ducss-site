@@ -5,7 +5,7 @@ app.set('view engine', 'ejs');
 
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
-const url = 'mongodb://basket:3448fc047e4657d16f6acb14b247b860@dokku-mongo-basket:27017/basket';
+const url = process.env.MONGO_URL;
 // Create a new MongoClient
 const client = new MongoClient(url);
 // Database Name
