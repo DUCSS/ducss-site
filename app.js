@@ -5,23 +5,15 @@ app.set('view engine', 'ejs');
 
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
+
 const url = process.env.MONGO_URL;
-// Create a new MongoClient
-const client = new MongoClient(url);
-// Database Name
-const dbName = 'baseket';
 var internshipPosts;
-client.connect(function(err) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
-  const db = client.db(dbName);
+MongoClient.connect(url, function(err, db) {
   db.collection('internships').find().toArray(function (err, result) {
     if (err) throw err
     internshipPosts = result;
-  })
-  client.close();
+  });
 });
-
 
 app.get('/', (req, res) => {
   res.render('home');
