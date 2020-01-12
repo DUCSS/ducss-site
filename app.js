@@ -3,12 +3,25 @@ express             = require('express'),
 mongoose            = require('mongoose'),
 app                 = express();
 
+
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect(process.env.MONGO_URL);
+require('dotenv').config();
+//var url = process.env.MONGO_URL;
+var url = process.env['MONGO_URL'];
+mongoose.connect(url);
 
-var Internships = mongoose.model("internships");
+
+var internshipSchema = new mongoose.Schema({
+  thumbnail: String,
+  title: String,
+  description: String,
+  datePosted: String,
+  id: Number
+});
+
+var Internships = mongoose.model("internships", internshipSchema);
 var internshipPosts;
 
 Internships.find({}, function(err, res){
@@ -18,7 +31,6 @@ Internships.find({}, function(err, res){
     internshipPosts = res;
   }
 });
-
 
 app.get('/', (req, res) => {
   res.render('home');
