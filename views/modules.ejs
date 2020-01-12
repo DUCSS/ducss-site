@@ -1,0 +1,88 @@
+<% include partials/header %>
+<div class="p-5"></div>
+<div id="cont" class="container text-center mt-2 mb-5">
+    <p class="h3 mb-4">Junior Fresh</p>
+    <div class="row">
+        <div class="col">
+            <p class="h5">Michaelmas</p>
+            <hr class="w-25">
+            <p><a href="/modules/CSU11001">Mathematics I</a></p>
+            <p><a href="/modules/CSU11010">Introduction to Programming</a></p>
+            <p><a href="/modules/CSU11021">Introduction to Computing I</a></p>
+            <p><a href="/modules/CSU11026">Digital Logic Design</a></p>
+            <p><a href="/modules/CSU11031">Electronics and Information Techonology</a></p>
+            <p><a href="/modules/CSU11081">Computers and Society </a></p>
+        </div>
+        <div class="col">
+            <p class="h5">Hilary</p>
+            <hr class="w-25">
+            <p><a href="/modules/CSU11002">Mathematics II</a></p>
+            <p><a href="/modules/CSU11010">Introduction to Programming continued</a></p>
+            <p><a href="/modules/CSU11022">Introduction to Computing II</a></p>
+            <p><a href="/modules/CSU11026">Digital Logic Design continued</a></p>
+            <p><a href="/modules/CSU11021">Programming Project</a></p>
+            <p><a href="/modules/STU11002">Statistical Analysis I</a></p>
+        </div>
+    </div>
+</div>
+<hr class="w-75">
+<div class="container text-center mt-5 mb-5">
+    <p class="h3 mb-4">Senior Fresh</p>
+    <div class="row">
+        <div class="col">
+            <p class="h5">Michaelmas</p>
+            <hr class="w-25">
+            <p><a href="hmodules/CSU22010">Algorithms and Data Structures</a></p>
+            <p><a href="/modules/CSU22014">Systems Programming I</a></p>
+            <p><a href="/modules/CSU23031">Telecommunications II</a></p>
+            <p><a href="/modules/CSU22041">Information Management I</a></p>
+            <p><a href="/modules/MAU22C00">Discrete Mathematics</a></p>
+        </div>
+        <div class="col">
+            <p class="h5">Hilary</p>
+            <hr class="w-25">
+            <p><a href="/modules/CSU22010">Algorithms and Data Structures continued</a></p>
+            <p><a href="/modules/CSU23016">Concurrent Systems and Operating Systems</a></p>
+            <p><a href="/modules/CSU23021">Microprocessor Systems</a></p>
+            <p><a href="/modules/CSU22022">Computer Architecture I</a></p>
+            <p><a href="/modules/MAU22C00">Discrete Mathematics continued</a></p>
+            <p><a href="/modules/CSU22013">Software Engineering Project I</a></p>
+        </div>
+    </div>
+</div>
+<hr class="w-75">
+<div class="container text-center mt-5">
+    <p class="h3 mb-4">Junior Sophister</p>
+    <div class="row">
+        <div class="col">
+            <p class="h5">Michaelmas</p>
+            <hr class="w-25">
+            <p><a href="/modules/CSU34011">Symbolic Programming</a></p>
+            <p><a href="/modules/CSU33012">Software Engineering</a></p>
+            <p><a href="/modules/CSU34021">Computer Architecture II</a></p>
+            <p><a href="/modules/CSU33071">Compiler Design I</a></p>
+            <p><a href="/modules/CSU34016">Introduction to Functional Programming</a></p>
+            <p><a href="/modules/CSU34041">Information Management II</a></p>
+        </div>
+        <div class="col">
+            <p class="h5">Hilary</p>
+            <hr class="w-25">
+            <p><a href="/modules/CSU33081">Computational Mathematics</a></p>
+            <p><a href="/modules/CSU33013">Software Engineering Group Project</a></p>
+            <p><a href="/modules/CSU33014">Concurrent Systems I</a></p>
+            <p><a href="/modules/STU33009">Statistical Methods for Computer Science</a></p>
+            <p><a href="/modules/CSU34031">Advanced Telecommunications</a></p>
+            <p><a href="/modules/CSU33061">Artificial Intelligence</a></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var cont = document.querySelector("#cont");
+    document.querySelector(".navbar-toggler").addEventListener("click", () => {
+        cont.classList.toggle("movedown");
+    });
+  </script>
+
+
+<% include partials/footer %>
