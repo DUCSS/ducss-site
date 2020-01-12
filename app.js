@@ -1,20 +1,24 @@
-const express = require('express');
-const app = express();
-app.use(express.static("public"));
+const bodyParser    = require('body-parser'),
+express             = require('express'),
+mongoose            = require('mongoose'),
+app                 = express();
+
 app.set('view engine', 'ejs');
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended: true}));
+mongoose.connect(process.env.MONGO_URL);
 
-// const MongoClient = require('mongodb').MongoClient;
-// const assert = require('assert');
+var Internships = mongoose.model("internships");
+var internshipPosts;
 
-// const url = process.env.MONGO_URL;
-// var internshipPosts;
-// MongoClient.connect(url, function(err, db) {
-//   var dbo = db.db("basket");
-//   dbo.collection('internships').find().toArray(function (err, result) {
-//     if (err) throw err
-//     internshipPosts = result;
-//   });
-// });
+Internships.find({}, function(err, res){
+  if(err){
+    console.log(err);
+  } else{
+    internshipPosts = res;
+  }
+});
+
 
 app.get('/', (req, res) => {
   res.render('home');
@@ -29,6 +33,10 @@ app.get('/internships', (req, res) => {
 });
 
 app.get('/modules', (req, res) => {
+  res.render('modules');
+});
+
+app.get('/modules/:id', (req, res) => {
   res.render('modules');
 });
 
