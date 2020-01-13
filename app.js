@@ -20,17 +20,37 @@ var internshipSchema = new mongoose.Schema({
   datePosted: String,
   id: Number
 });
-
 var Internships = mongoose.model("internships", internshipSchema);
-var internshipPosts;
 
-Internships.find({}, function(err, res){
-  if(err){
-    console.log(err);
-  } else{
-    internshipPosts = res;
-  }
+var moduleSchema = new mongoose.Schema({
+  moduleCode: String,
+  moduleName: String,
+  lecturers: [{
+    lecturerName: String
+  }],
+  moduleComments: [{
+    alias: String,
+    email: String,
+    comment: String,
+    created: {type: Date, default: Date.now}
+  }]
 });
+var Modules = mongoose.model("modules", moduleSchema);
+
+// Modules.create({
+//   moduleCode: "CSU11001",
+//   moduleName: "Mathematics I",
+//   lecturers:[{
+//     lecturerName: "Dr. Meriel Huggard"
+//   }],
+//   moduleComments: [{
+//     alias: "Zoomer Guy",
+//     email: "oppa@tcd.ie",
+//     comment: "I did't get the point of the maths being taught in this module"
+//   }]
+// })
+
+
 
 app.get('/', (req, res) => {
   res.render('home');
@@ -41,15 +61,27 @@ app.get('/contact', (req, res) => {
 });
 
 app.get('/internships', (req, res) => {
-  res.render('internships', {internshipPosts: internshipPosts});
+    Internships.find({}, function(err, internships){
+    if(err){
+      console.log(err);
+    } else{
+      res.render('internships', {internshipPosts: internships});
+    }
+  });
 });
 
 app.get('/modules', (req, res) => {
-  res.render('modules');
+  res.render('modulesIndex');
 });
 
 app.get('/modules/:id', (req, res) => {
-  res.render('modules');
+  Modules.find({moduleCode: req.params.id}, function(err, module){
+    if(err){
+      console.log(err);
+    } else{
+      res.render('module', {moduleInfo: module[0]});
+    }
+  });
 });
 
 // process.env.PORT is the port of the server(DigitalOcean) that is listening

@@ -1,7 +1,3 @@
-/* gainsboro */
-/* #584b406c */
-/* azure */
-/* #ff8e28d4 */
 body {
   background: #ff8e28d4;
   font-family: "Nunito", sans-serif;
@@ -11,8 +7,6 @@ body {
 .opaque-bg{
   background: rgba(0, 0, 0, 0.7);
 }
-
-
 .carousel-item {
   overflow: hidden;
   width: 100%;
@@ -124,6 +118,6 @@ a:hover{
 }
 
 .movedown{
-  margin-top: 200px !important;
+  margin-top: 250px !important;
   transition: margin-top 400ms;
 }
