@@ -1,3 +1,39 @@
 <% include partials/header %>
-<p class="h3"> <%= moduleInfo.moduleName %> <%= moduleInfo.moduleCode %></p>
+
+<div id="cont" class="container">
+    <p class="h2"> <%= moduleInfo.moduleName %></p>
+    <p class="h3 mb-5"><%= moduleInfo.moduleCode %></p>
+
+    <% moduleInfo.moduleComments.forEach(function(comment){ %>
+        <p class="h4"> <%= comment.comment %> </p> 
+        <p class="h5"> <%= comment.alias %> posted: <%= comment.created %> </p> 
+    <% }); %>
+
+    <form class="mt-5"> 
+
+        <div class="form-group w-50">
+
+          <label for="exampleInputEmail1">TCD email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted">You will be sent a verifcation email.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Comment</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+</div>
+
+
+<script>
+    var cont = document.querySelector("#cont");
+    document.querySelector(".navbar-toggler").addEventListener("click", () => {
+        cont.classList.toggle("movedown");
+    });
+</script>
+
 <% include partials/footer %>
