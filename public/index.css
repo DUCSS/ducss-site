@@ -1,6 +1,22 @@
 body {
-  background: #ff8e28d4;
+  background: #e0a36d;
   font-family: "Nunito", sans-serif;
+
+}
+
+.text-muted {
+  color: #3817078c!important;
+}
+
+#date{
+  color: #183e50a6;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.comment{
+  background: rgb(208, 163, 123);
+  border: 1px solid #18212b!important;
 
 }
 
@@ -72,8 +88,6 @@ body {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(68, 40, 21, 0.945)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-
-
 .jumbotron{
     color: #212529;
     background-color: #584b406c;
@@ -85,12 +99,12 @@ body {
 
 
 .navbar.scrolled{
-    background: #3edcf2;
+    background: #47777edc;
     transition: background 500ms;
 }
 
 .navbar.hamburger{
-    background: #3edcf2;
+    background: #47777edc;
     transition: background 500ms;
 }
 
@@ -98,7 +112,11 @@ body {
   background-color: none;
 }
 .internship-card{
-  background-color: #ff8e28d4;
+  background-color: #c16200ab;
+}
+
+div#intern.border{
+  border: 1px solid #151f44!important;
 }
 
 small{

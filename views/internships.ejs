@@ -5,7 +5,7 @@
 
   <% internshipPosts.forEach(function(internshipPost){ %>
     <div class="card mb-3 border-0" style="max-width: 100%;">
-      <div class="row no-gutters align-items-center internship-card">
+      <div id="intern" class="row p-4 no-gutters align-items-center internship-card border rounded-lg">
         <div class="col-md-4">
           <img src="<%=internshipPost.thumbnail%>" class="card-img" alt="">
         </div>
@@ -21,7 +21,7 @@
       </div>
     </div>
     <hr class="w-100 mt-0 mt-md-5 mb-5">
-    <% }); %>
+  <% }); %>
     
   </div>
   <script>
