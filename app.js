@@ -3,40 +3,40 @@ express             = require('express'),
 mongoose            = require('mongoose'),
 app                 = express();
 
-
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 require('dotenv').config();
-var url = process.env.MONGO_URL;
-//var url = process.env['MONGO_URL'];
-mongoose.connect(url);
+//var url = process.env.MONGO_URL;
+// var url = process.env['MONGO_URL'];
+// mongoose.connect(url, function(err) {
+//     if (err) throw err;
+// });
 
+// var internshipSchema = new mongoose.Schema({
+//   thumbnail: String,
+//   title: String,
+//   description: String,
+//   datePosted: String,
+//   id: Number
+// });
+// var Internships = mongoose.model("internships", internshipSchema);
 
-var internshipSchema = new mongoose.Schema({
-  thumbnail: String,
-  title: String,
-  description: String,
-  datePosted: String,
-  id: Number
-});
-var Internships = mongoose.model("internships", internshipSchema);
-
-var moduleSchema = new mongoose.Schema({
-  moduleCode: String,
-  moduleName: String,
-  moduleDescription: String,
-  lecturers: [{
-    lecturerName: String
-  }],
-  moduleComments: [{
-    alias: String,
-    email: String,
-    comment: String,
-    created: {type: Date, default: Date.now}
-  }]
-});
-var Modules = mongoose.model("modules", moduleSchema);
+// var moduleSchema = new mongoose.Schema({
+//   moduleCode: String,
+//   moduleName: String,
+//   moduleDescription: String,
+//   lecturers: [{
+//     lecturerName: String
+//   }],
+//   moduleComments: [{ 
+//     alias: String,
+//     email: String,
+//     comment: String,
+//     created: {type: Date, default: Date.now}
+//   }]
+// });
+// var Modules = mongoose.model("modules", moduleSchema);
 
 // Modules.create({
 //   moduleCode: "CSU11001",
@@ -74,19 +74,23 @@ app.get('/contact', (req, res) => {
   res.render('contact');
 });
 
-app.get('/internships', (req, res) => {
-    Internships.find({}, function(err, internships){
-    if(err){
-      console.log(err);
-    } else{
-      res.render('internships', {internshipPosts: internships});
-    }
-  });
+// app.get('/internships', (req, res) => {
+//     Internships.find({}, function(err, internships){
+//     if(err){
+//       //console.log(err);
+//     } else{
+//       res.render('internships', {internshipPosts: internships});
+//     }
+//   });
+// });
+
+app.get('/modules', (req, res) => {
+  res.render('modulesIndex');
 });
 
-// app.get('/modules', (req, res) => {
-//   res.render('modulesIndex');
-// });
+app.get('/hoodies', (req, res) => {
+  res.render('hoodies');
+});
 
 // app.get('/modules/:id', (req, res) => {
 //   Modules.find({moduleCode: req.params.id}, function(err, module){
