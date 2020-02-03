@@ -89,7 +89,7 @@ app.get('/modules', (req, res) => {
 // });
 
 // process.env.PORT is the port of the server(DigitalOcean) that is listening
-const PORT = process.env.PORT || 8080;
+const PORT = 443;
 const HOST = process.env.HOST || '0.0.0.0';
 app.listen(PORT, HOST, () =>{
   console.log("Server running on "+ HOST + ":" + PORT +  " ...");
