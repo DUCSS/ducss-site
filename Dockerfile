@@ -12,7 +12,7 @@ RUN npm install
 
 # Copy source code 
 COPY . .
-EXPOSE 443
+EXPOSE 8080
 
 RUN npm install -g nodemon
 
