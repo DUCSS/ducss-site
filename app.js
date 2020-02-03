@@ -8,15 +8,15 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 // if docker app is started before mongodb can accept connections, the connection will try again
-var connectWithRetry = function() {
-  return mongoose.connect('mongodb://db:27017/internships', function(err) {
-    if (err) {
-      console.error('Failed to connect to mongo on startup - retrying in 5 sec');
-      setTimeout(connectWithRetry, 5000);
-    }
-  });
-};
-connectWithRetry();
+// var connectWithRetry = function() {
+//   return mongoose.connect('mongodb://db:27017/internships', function(err) {
+//     if (err) {
+//       console.error('Failed to connect to mongo on startup - retrying in 5 sec');
+//       setTimeout(connectWithRetry, 5000);
+//     }
+//   });
+// };
+// connectWithRetry();
 
 // var internshipSchema = new mongoose.Schema({
 //   thumbnail: String,
@@ -89,7 +89,7 @@ app.get('/modules', (req, res) => {
 // });
 
 // process.env.PORT is the port of the server(DigitalOcean) that is listening
-const PORT = 443;
+const PORT = process.env.HOST || '8080';
 const HOST = process.env.HOST || '0.0.0.0';
 app.listen(PORT, HOST, () =>{
   console.log("Server running on "+ HOST + ":" + PORT +  " ...");
