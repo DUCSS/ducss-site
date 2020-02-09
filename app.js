@@ -60,6 +60,10 @@ app.get('/contact', (req, res) => {
   res.render('contact');
 });
 
+app.get('/future50', (req, res) => {
+  res.render('future50');
+});
+
 // app.get('/internships', (req, res) => {
 //     Internships.find({}, function(err, internships){
 //     if(err){
