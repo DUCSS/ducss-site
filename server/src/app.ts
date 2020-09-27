@@ -1,9 +1,8 @@
 import express, { Request, Response } from "express";
-import dotenv from "dotenv";
 const app = express();
 
 if (process.env.NODE_ENV !== 'production') {
-  dotenv.config();
+  require('dotenv').config();
 }
 
 app.get("/", (req: Request, res: Response) => {
