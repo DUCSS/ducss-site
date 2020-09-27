@@ -1,15 +1,21 @@
-import express, {Request, Response} from 'express';
-
+import express, { Request, Response } from "express";
+import dotenv from "dotenv";
 const app = express();
 
-app.get('/', (req: Request, res: Response) => {
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config();
+}
+
+app.get("/", (req: Request, res: Response) => {
   res.status(200);
   res.json({
-    response: "Hello world"
+    response: "Hello world",
   });
 });
 
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Server started at port ${port}`);
+const PORT = process.env.API_PORT;
+const HOST = process.env.HOST || "0.0.0.0";
+
+app.listen(PORT, () => {
+  console.log(`Listening at http://${HOST}:${PORT}`);
 });
