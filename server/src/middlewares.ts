@@ -14,8 +14,3 @@ export const errorHandler = (error: Error, req: Request, res: Response, next: Ca
     ...(process.env.NODE_ENV === 'development' && { stackTrace: error.stack })
   });
 };
-
-module.exports = {
-  notFoundError,
-  errorHandler,
-}
