@@ -8,7 +8,7 @@ const app = express();
 app.use(morgan('common'));
 app.use(helmet());
 app.use(cors({
-  origin: 'https://localhost:3000',
+  origin: process.env.CORS_ORIGIN_URL,
 }))
 
 app.get("/", (req: Request, res: Response) => {
