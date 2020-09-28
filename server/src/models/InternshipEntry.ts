@@ -9,7 +9,7 @@ const requiredString = {
 const internshipEntrySchema = new Schema({
   title: requiredString,
   shortDescription: requiredString,
-  links: [{ desciption: String, link: requiredString }],
+  links: [{ description: String, link: requiredString }],
 });
 
 export const InternshipEntry = mongoose.model(
