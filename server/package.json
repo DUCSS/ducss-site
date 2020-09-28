@@ -19,12 +19,13 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^4.1.1",
-    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.7",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.7",
     "@types/express": "^4.17.8",
+    "@types/mongoose": "^5.7.36",
     "@types/morgan": "^1.9.1",
     "@types/node": "^14.11.2",
     "nodemon": "^2.0.4",
