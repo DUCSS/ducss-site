@@ -16,7 +16,7 @@ router.post("/", async (req: Request, res: Response, next: CallableFunction) => 
     const createdEntry = await internshipEntry.save();
     res.json(createdEntry);
   } catch (error) {
-    res.status(400);
+    if (error.name === "ValidationError") res.status(400);
     next(error);
   }
 });
