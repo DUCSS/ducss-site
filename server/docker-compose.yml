@@ -5,10 +5,12 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - ${API_PORT}:${API_PORT}
+      - ${SERVER_PORT}:${SERVER_PORT}
     environment:
+      - CORS_ORIGIN_URL=${CORS_ORIGIN_URL}
+      - MONGODB_URL=${MONGODB_URL}
       - NODE_ENV=production
-      - API_PORT=${API_PORT}
+      - SERVER_PORT=${SERVER_PORT}
     networks:
       - backend
     depends_on:

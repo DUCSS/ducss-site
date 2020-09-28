@@ -18,7 +18,7 @@ COPY --from=build /usr/src/app/dist ./dist
 
 RUN npm ci --production
 
-EXPOSE ${API_PORT}
+EXPOSE ${SERVER_PORT}
 
 RUN apk add --no-cache tini
 ENTRYPOINT ["/sbin/tini", "--"]

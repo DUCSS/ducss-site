@@ -21,7 +21,7 @@ app.get("/", (req: Request, res: Response) => {
 app.use(notFoundError);
 app.use(errorHandler);
 
-const PORT = process.env.API_PORT;
+const PORT = process.env.SERVER_PORT;
 const HOST = process.env.HOST || "0.0.0.0";
 
 app.listen(PORT, () => {
