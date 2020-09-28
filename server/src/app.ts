@@ -1,15 +1,27 @@
-import express, { Request, Response } from 'express';
-import {notFoundError, errorHandler } from './middlewares'
-import cors from 'cors';
-import helmet from 'helmet';
-import morgan from 'morgan';
+import express, { Request, Response } from "express";
+import { notFoundError, errorHandler } from "./middlewares";
+import internships from "./routes/internships";
+import cors from "cors";
+import helmet from "helmet";
+import mongoose from "mongoose";
+import morgan from "morgan";
+
+mongoose.connect(String(process.env.MONGODB_URL), {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const app = express();
-app.use(morgan('common'));
+app.use(morgan("common"));
 app.use(helmet());
-app.use(cors({
-  origin: process.env.CORS_ORIGIN_URL,
-}))
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN_URL,
+  })
+);
+app.use(express.json());
+
+app.use("/api/internships", internships);
 
 app.get("/", (req: Request, res: Response) => {
   res.status(200);

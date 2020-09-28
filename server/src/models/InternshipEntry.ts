@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const requiredString = {
   type: String,
   required: true,
-}
+};
 
 const internshipEntrySchema = new Schema({
   title: requiredString,
