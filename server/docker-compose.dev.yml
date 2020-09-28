@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: dev.Dockerfile
     environment:
-      - NODE_ENV=dev
+      - NODE_ENV=development
     volumes:
       - ./src:/usr/src/app/src
       - ./package.json:/usr/src/app/package.json
