@@ -19,6 +19,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^4.1.1",
+    "mongodb": "^3.6.2",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
