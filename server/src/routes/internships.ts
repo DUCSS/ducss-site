@@ -6,13 +6,13 @@ const router = Router();
 router.get("/", async (req: Request, res: Response) => {
   const internshipEntries = await InternshipEntry.find();
   res.status(200);
-  res.json(internshipEntries);
+  res.json({ response: internshipEntries });
 });
 
 router.get("/:id", async (req: Request, res: Response) => {
   const internshipEntry = await InternshipEntry.findById(req.params.id);
   res.status(200);
-  res.json(internshipEntry);
+  res.json({ response: internshipEntry });
 });
 
 router.post(
@@ -21,7 +21,7 @@ router.post(
     try {
       const internshipEntry = new InternshipEntry(req.body);
       const createdEntry = await internshipEntry.save();
-      res.json(createdEntry);
+      res.json({ response: createdEntry });
     } catch (error) {
       if (error.name === "ValidationError") res.status(400);
       next(error);
@@ -39,7 +39,7 @@ router.post(
         internshipEntry,
         { new: true }
       );
-      res.json(updatedEntry);
+      res.json({ response: updatedEntry });
     } catch (error) {
       if (error.name === "ValidationError") res.status(400);
       next(error);
