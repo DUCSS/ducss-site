@@ -21,6 +21,7 @@ router.post(
     try {
       const internshipEntry = new InternshipEntry(req.body);
       const createdEntry = await internshipEntry.save();
+      res.status(200);
       res.json({ response: createdEntry });
     } catch (error) {
       if (error.name === "ValidationError") res.status(400);
@@ -39,6 +40,7 @@ router.post(
         internshipEntry,
         { new: true }
       );
+      res.status(200);
       res.json({ response: updatedEntry });
     } catch (error) {
       if (error.name === "ValidationError") res.status(400);
