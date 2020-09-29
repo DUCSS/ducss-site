@@ -12,30 +12,30 @@ services:
       - backend
     stdin_open: true
 
-  server:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
-    ports:
-      - ${SERVER_PORT}:${SERVER_PORT}
-    environment:
-      - CORS_ORIGIN_URL=${CORS_ORIGIN_URL}
-      - MONGODB_URL=${MONGODB_URL}
-      - NODE_ENV=production
-      - SERVER_PORT=${SERVER_PORT}
-    networks:
-      - backend
-    depends_on:
-      - db
+  # server:
+  #   build:
+  #     context: ./server
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - ${SERVER_PORT}:${SERVER_PORT}
+  #   environment:
+  #     - CORS_ORIGIN_URL=${CORS_ORIGIN_URL}
+  #     - MONGODB_URL=${MONGODB_URL}
+  #     - NODE_ENV=production
+  #     - SERVER_PORT=${SERVER_PORT}
+  #   networks:
+  #     - backend
+  #   depends_on:
+  #     - db
 
-  db:
-    image: mongo:4.4.1-bionic
-    ports:
-      - ${MONGODB_PORT}:${MONGODB_PORT}
-    networks:
-      - backend
-    volumes:
-      - database_data:/data/db
+  # db:
+  #   image: mongo:4.4.1-bionic
+  #   ports:
+  #     - ${MONGODB_PORT}:${MONGODB_PORT}
+  #   networks:
+  #     - backend
+  #   volumes:
+  #     - database_data:/data/db
 
 networks:
   backend:
