@@ -1,5 +1,17 @@
 version: "3.8"
 services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - ${PORT}:${PORT}
+    environment:
+      - PORT=${PORT}
+    networks:
+      - backend
+    stdin_open: true
+
   server:
     build:
       context: ./server
@@ -15,6 +27,7 @@ services:
       - backend
     depends_on:
       - db
+
   db:
     image: mongo:4.4.1-bionic
     ports:

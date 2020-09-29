@@ -1,9 +1,18 @@
 version: "3.8"
 services:
+  client:
+    build:
+      context: ./client
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./client/src:/usr/src/app/src
+      - ./client/package.json:/usr/src/app/package.json
+      - ./client/package-lock.json:/usr/src/app/package-lock.json
+
   server:
     build:
       context: ./server
-      dockerfile: ./server/dev.Dockerfile
+      dockerfile: dev.Dockerfile
     environment:
       - NODE_ENV=development
     volumes:
