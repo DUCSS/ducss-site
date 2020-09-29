@@ -3,22 +3,48 @@ import { InternshipEntry } from "../models/InternshipEntry";
 
 const router = Router();
 
-router.get("/", (req: Request, res: Response) => {
+router.get("/", async (req: Request, res: Response) => {
+  const internshipEntries = await InternshipEntry.find();
   res.status(200);
-  res.json({
-    message: "Hello world! 🌍",
-  });
+  res.json(internshipEntries);
 });
 
-router.post("/", async (req: Request, res: Response, next: CallableFunction) => {
-  try {
-    const internshipEntry = new InternshipEntry(req.body);
-    const createdEntry = await internshipEntry.save();
-    res.json(createdEntry);
-  } catch (error) {
-    if (error.name === "ValidationError") res.status(400);
-    next(error);
-  }
+router.get("/:id", async (req: Request, res: Response) => {
+  const internshipEntry = await InternshipEntry.findById(req.params.id);
+  res.status(200);
+  res.json(internshipEntry);
 });
+
+router.post(
+  "/",
+  async (req: Request, res: Response, next: CallableFunction) => {
+    try {
+      const internshipEntry = new InternshipEntry(req.body);
+      const createdEntry = await internshipEntry.save();
+      res.json(createdEntry);
+    } catch (error) {
+      if (error.name === "ValidationError") res.status(400);
+      next(error);
+    }
+  }
+);
+
+router.post(
+  "/:id",
+  async (req: Request, res: Response, next: CallableFunction) => {
+    try {
+      const internshipEntry = req.body;
+      const updatedEntry = await InternshipEntry.findByIdAndUpdate(
+        req.params.id,
+        internshipEntry,
+        { new: true }
+      );
+      res.json(updatedEntry);
+    } catch (error) {
+      if (error.name === "ValidationError") res.status(400);
+      next(error);
+    }
+  }
+);
 
 export default router;
