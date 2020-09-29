@@ -21,7 +21,7 @@ app.use(
 );
 app.use(express.json());
 
-app.use("/api/internships", internships);
+app.use("/api/v1/internships", internships);
 
 app.get("/", (req: Request, res: Response) => {
   res.status(200);
