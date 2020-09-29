@@ -3,8 +3,8 @@ FROM node:12-alpine
 
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json tsconfig.json ./
-COPY src ./src
+COPY server/package.json server/package-lock.json server/tsconfig.json ./
+COPY server/src ./src
 
 RUN npm install
 
