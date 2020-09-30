@@ -12,8 +12,12 @@ RUN npm install && npm run build
 # Run stage
 FROM nginx:1.19.2-alpine
 
-WORKDIR /usr/share/nginx
+COPY nginx.conf /etc/nginx
 
-COPY --from=build /usr/src/app/build ./html
+WORKDIR /usr/share/nginx/html
+
+COPY --from=build /usr/src/app/build ./
 
 EXPOSE ${PORT}
+
+CMD ["nginx", "-g", "daemon off;"]
