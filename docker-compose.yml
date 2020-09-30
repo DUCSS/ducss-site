@@ -8,6 +8,8 @@ services:
       - ${PORT}:${PORT}
     environment:
       - PORT=${PORT}
+      - REACT_APP_SERVER_PORT=${SERVER_PORT}
+      - NODE_ENV=production
     networks:
       - backend
     stdin_open: true

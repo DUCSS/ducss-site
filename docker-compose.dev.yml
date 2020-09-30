@@ -4,6 +4,8 @@ services:
     build:
       context: ./client
       dockerfile: dev.Dockerfile
+    environment:
+      - NODE_ENV=development
     volumes:
       - ./client/src:/usr/src/app/src
       - ./client/package.json:/usr/src/app/package.json
