@@ -11,7 +11,7 @@ class HTTPClient {
     });
   }
 
-  async getInternshipEntries(): Promise<InternshipEntry> {
+  async getInternshipEntries(): Promise<[InternshipEntry]> {
     const response = await this.request("GET", "/internships");
     const json = await response.json();
 
