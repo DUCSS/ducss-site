@@ -1,3 +1,5 @@
+import { InternshipEntry } from "../interfaces/database_types";
+
 const BASE_URL = `http://localhost:${process.env.SERVER_PORT}/api/v1`;
 
 class HTTPClient {
@@ -9,7 +11,7 @@ class HTTPClient {
     });
   }
 
-  async getInternshipEntries(): Promise<any> {
+  async getInternshipEntries(): Promise<InternshipEntry> {
     const response = await this.request("GET", "/internships");
     const json = await response.json();
 
