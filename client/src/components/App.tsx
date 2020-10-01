@@ -17,8 +17,8 @@ const App = () => {
   return (
     <div>
       <ul>
-        {internshipEntries?.map((entry: InternshipEntry) => {
-          return <li>{entry.title}</li>;
+        {internshipEntries?.map((entry: InternshipEntry, index: number) => {
+          return <li key={index}>{entry.title}</li>;
         })}
       </ul>
     </div>
