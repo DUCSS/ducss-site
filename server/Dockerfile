@@ -11,6 +11,8 @@ RUN npm install && npm run build
 # Run stage
 FROM node:12-alpine
 
+ARG SERVER_PORT
+
 WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./

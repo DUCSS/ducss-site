@@ -1,6 +1,8 @@
 # Run stage
 FROM node:12-alpine
 
+ARG PORT
+
 WORKDIR /usr/src/app
 
 COPY package.json package-lock.json tsconfig.json ./
