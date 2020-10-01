@@ -1,6 +1,6 @@
 import { InternshipEntry } from "../interfaces/database_types";
 
-const BASE_URL = `http://localhost:${process.env.REACT_APP_SERVER_PORT}/api/v1`;
+const BASE_URL = `http://${process.env.REACT_APP_HOST}:${process.env.REACT_APP_SERVER_PORT}/api/v1`;
 
 class HTTPClient {
   request(method: string, route: string): Promise<Response> {
