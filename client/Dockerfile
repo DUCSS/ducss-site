@@ -18,14 +18,13 @@ RUN npm install && npm run build
 # Run stage
 FROM nginx:1.19.2-alpine
 
-ARG PORT
-
 COPY nginx.conf /etc/nginx
 
 WORKDIR /usr/share/nginx/html
 
 COPY --from=build /usr/src/app/build ./
 
-EXPOSE ${PORT}
+EXPOSE 80
+EXPOSE 443
 
 CMD ["nginx", "-g", "daemon off;"]

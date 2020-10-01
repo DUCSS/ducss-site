@@ -26,6 +26,7 @@ services:
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
     environment:
+      - HOST=${HOST}
       - CORS_ORIGIN_URL=${CORS_ORIGIN_URL}
       - MONGODB_URL=${MONGODB_URL}
       - NODE_ENV=production
