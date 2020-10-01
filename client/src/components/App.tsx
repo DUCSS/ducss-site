@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HTTPClient from "../api/http_client";
-import { InternshipEntry } from "../interfaces/database_types";
+import { InternshipEntry, LinkEntry } from "../interfaces/database_types";
 
 const App = () => {
   const [internshipEntries, setInternshipEntries] = useState<
@@ -17,9 +17,34 @@ const App = () => {
   return (
     <div>
       <ul>
-        {internshipEntries?.map((entry: InternshipEntry, index: number) => {
-          return <li key={index}>{entry.title}</li>;
-        })}
+        {internshipEntries?.map(
+          (entry: InternshipEntry, internshipIndex: number) => {
+            return (
+              <li key={`internship-entry-${internshipIndex}`}>
+                <p>{entry.title}</p>
+                <p>{entry.shortDescription}</p>
+                <ul>
+                  {entry.links.map(
+                    (linkEntry: LinkEntry, linkIndex: number) => {
+                      return (
+                        <li key={`link-entry-${internshipIndex}-${linkIndex}`}>
+                          {linkEntry.description} -{" "}
+                          <a
+                            href={linkEntry.link}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Apply Here
+                          </a>
+                        </li>
+                      );
+                    }
+                  )}
+                </ul>
+              </li>
+            );
+          }
+        )}
       </ul>
     </div>
   );
