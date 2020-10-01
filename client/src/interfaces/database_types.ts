@@ -1,4 +1,4 @@
-interface LinkEntry {
+export interface LinkEntry {
   description?: string
   link: string
 }
