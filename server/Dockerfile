@@ -1,12 +1,31 @@
+# Install dev dependencies stage
+FROM node:12-alpine as install_dev
+
+WORKDIR /usr/src/app
+
+COPY package.json package-lock.json ./
+
+RUN npm install
+
 # Build stage
 FROM node:12-alpine as build
 
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json tsconfig.json ./
+COPY package.json tsconfig.json ./
 COPY src ./src
+COPY --from=install_dev /usr/src/app/node_modules ./node_modules
 
-RUN npm install && npm run build
+RUN npm run build
+
+# Install prod dependencies stage
+FROM node:12-alpine as install_prod
+
+WORKDIR /usr/src/app
+
+COPY package.json package-lock.json ./
+
+RUN npm ci --production
 
 # Run stage
 FROM node:12-alpine
@@ -17,8 +36,7 @@ WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./
 COPY --from=build /usr/src/app/dist ./dist
-
-RUN npm ci --production
+COPY --from=install_prod /usr/src/app/node_modules ./node_modules
 
 EXPOSE ${SERVER_PORT}
 
