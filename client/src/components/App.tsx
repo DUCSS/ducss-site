@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import HTTPClient from "../api/http_client";
-import { InternshipEntry, LinkEntry } from "../interfaces/database_types";
+import React, { useEffect, useState } from 'react';
+import HTTPClient from '../api/http_client';
+import { InternshipEntry, LinkEntry } from '../interfaces/database_types';
 
 const App = () => {
   const [internshipEntries, setInternshipEntries] = useState<
@@ -28,7 +28,7 @@ const App = () => {
                     (linkEntry: LinkEntry, linkIndex: number) => {
                       return (
                         <li key={`link-entry-${internshipIndex}-${linkIndex}`}>
-                          {linkEntry.description} -{" "}
+                          {linkEntry.description} -{' '}
                           <a
                             href={linkEntry.link}
                             rel="noopener noreferrer"
