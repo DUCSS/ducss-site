@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import HTTPClient from '../api/http_client';
 import { InternshipEntry, LinkEntry } from '../interfaces/database_types';
 
-const App = () => {
+const App: React.FC = () => {
   const [internshipEntries, setInternshipEntries] = useState<
     [InternshipEntry] | undefined
   >();
