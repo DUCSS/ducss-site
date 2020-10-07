@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import HTTPClient from '../api/http_client';
 import { InternshipEntry, LinkEntry } from '../interfaces/database_types';
 
-const App: React.FC = () => {
+const InternshipsPage: React.FC = () => {
   const [internshipEntries, setInternshipEntries] = useState<
     [InternshipEntry] | undefined
   >();
@@ -42,4 +42,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default InternshipsPage;
