@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 
@@ -11,13 +11,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App: React.FC = () => {
   return (
-    <>
+    <Router>
       <Navbar />
       <Container>
-        <Homepage />
-        <InternshipsPage />
+        <Switch>
+          <Route path="/" exact component={Homepage} />
+          <Route path="/internships" component={InternshipsPage} />
+        </Switch>
       </Container>
-    </>
+    </Router>
   );
 };
 
