@@ -6,6 +6,7 @@ export interface LinkEntry {
 
 export interface InternshipEntry {
   id: number;
+  company: string;
   title: string;
   shortDescription: string;
   links: [LinkEntry];

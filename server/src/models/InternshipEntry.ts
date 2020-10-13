@@ -7,6 +7,7 @@ const requiredString = {
 };
 
 const internshipEntrySchema = new Schema({
+  company: requiredString,
   title: requiredString,
   shortDescription: requiredString,
   links: [{ description: String, link: requiredString }],
