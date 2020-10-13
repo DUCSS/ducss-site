@@ -15,7 +15,8 @@ const InternshipsPage: React.FC = () => {
   }, [httpClient]);
 
   return (
-    <div>
+    <>
+      <h1>Internships</h1>
       <ul>
         {internshipEntries?.map((entry: InternshipEntry) => (
           <li key={entry.id}>
@@ -38,7 +39,7 @@ const InternshipsPage: React.FC = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 
