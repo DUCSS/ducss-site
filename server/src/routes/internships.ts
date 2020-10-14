@@ -4,7 +4,7 @@ import { InternshipEntry } from "../models/InternshipEntry";
 const router = Router();
 
 router.get("/", async (req: Request, res: Response) => {
-  const internshipEntries = await InternshipEntry.find();
+  const internshipEntries = await InternshipEntry.find().sort({ company: 1 });
   res.status(200);
   res.json({ response: internshipEntries });
 });
