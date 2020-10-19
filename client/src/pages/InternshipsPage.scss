@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
-.card-columns {
+.card-columns.card-columns {
   @include media-breakpoint-only(sm) {
     -webkit-column-count: 1;
     -moz-column-count: 1;
