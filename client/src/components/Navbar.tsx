@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import BootstrapNavbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
@@ -7,21 +7,32 @@ import Nav from 'react-bootstrap/Nav';
 
 import { ReactComponent as DucssLogo } from '../assets/logo_white.svg';
 
+import './Navbar.scss';
+
 const Navbar: React.FC = () => {
   return (
     <BootstrapNavbar variant="dark" bg="ducss-dark">
       <Container>
-        <BootstrapNavbar.Brand as={Link} to="/">
+        <BootstrapNavbar.Brand as={NavLink} to="/">
           <DucssLogo width="75" height="auto" />
         </BootstrapNavbar.Brand>
         <Nav>
           <Nav.Item>
-            <Nav.Link as={Link} to="/">
+            <Nav.Link
+              as={NavLink}
+              to="/"
+              exact
+              activeClassName="navbar--active"
+            >
               Home
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link as={Link} to="/internships">
+            <Nav.Link
+              as={NavLink}
+              to="/internships"
+              activeClassName="navbar--active"
+            >
               Internships
             </Nav.Link>
           </Nav.Item>

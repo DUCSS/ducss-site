@@ -1,0 +1,5 @@
+@import '../App.scss';
+
+.navbar--active {
+  border-bottom: 1px solid map-get($theme-colors, ducss-primary);
+}
