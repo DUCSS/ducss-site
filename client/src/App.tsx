@@ -8,7 +8,7 @@ import InternshipsPage from './pages/InternshipsPage';
 import Navbar from './components/Navbar';
 import NotFoundPage from './pages/NotFoundPage';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.scss';
 
 const App: React.FC = () => {
   return (

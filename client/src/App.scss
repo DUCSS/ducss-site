@@ -1,0 +1,13 @@
+$theme-colors: (
+  ducss-primary: #fd9e3d,
+  ducss-dark: #323b4b,
+  amazon: #ff9900,
+  microsoft: #01a6f0,
+  susquehanna-international-group: #8abeeb,
+);
+
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  border-top: 3px solid map-get($theme-colors, ducss-primary);
+}

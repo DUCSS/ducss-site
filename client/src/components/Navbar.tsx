@@ -9,7 +9,7 @@ import { ReactComponent as DucssLogo } from '../assets/logo_white.svg';
 
 const Navbar: React.FC = () => {
   return (
-    <BootstrapNavbar variant="dark" bg="dark">
+    <BootstrapNavbar variant="dark" bg="ducss-dark">
       <Container>
         <BootstrapNavbar.Brand as={Link} to="/">
           <DucssLogo width="75" height="auto" />

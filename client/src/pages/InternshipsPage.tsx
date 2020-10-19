@@ -3,24 +3,16 @@ import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
 import Button from 'react-bootstrap/Button';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 import './InternshipsPage.scss';
 
 import HTTPClient from '../api/http_client';
 import { InternshipEntry, LinkEntry } from '../interfaces/database_types';
 
-const getTheme = (companyName: string): string => {
+const getThemeName = (companyName: string): string => {
   const lowerCase = companyName.toLowerCase();
-  switch (lowerCase) {
-    case 'microsoft':
-      return 'primary';
-    case 'amazon':
-      return 'warning';
-    case 'susquehanna international group':
-      return 'info';
-    default:
-      return '';
-  }
+  return lowerCase.replace(/\s/g, '-');
 };
 
 const InternshipsPage: React.FC = () => {
@@ -37,10 +29,17 @@ const InternshipsPage: React.FC = () => {
 
   return (
     <>
-      <h1 className="text-center">Internships</h1>
+      <Jumbotron className="my-4 bg-ducss-dark text-white">
+        <h1 className="display-4">Internships</h1>
+        <hr className="my-4 bg-ducss-primary" />
+        <p>
+          Here you can find information about internships provided by our
+          sponsors Amazon, Microsoft and Susquehanna International Group (SIG).
+        </p>
+      </Jumbotron>
       <CardColumns>
         {internshipEntries?.map((entry: InternshipEntry) => (
-          <Card border={getTheme(entry.company)} key={entry.id}>
+          <Card border={getThemeName(entry.company)} key={entry.id}>
             <Card.Header as="h5">{entry.title}</Card.Header>
             <Card.Body>
               <Card.Title className="text-muted">{entry.company}</Card.Title>
@@ -48,7 +47,7 @@ const InternshipsPage: React.FC = () => {
               {entry.links.map((linkEntry: LinkEntry) => (
                 <Card.Text key={linkEntry.id}>
                   <Button
-                    variant={getTheme(entry.company)}
+                    variant={getThemeName(entry.company)}
                     href={linkEntry.link}
                     target="_blank"
                   >
