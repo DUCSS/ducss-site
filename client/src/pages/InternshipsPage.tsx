@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
 import Button from 'react-bootstrap/Button';
 
+import './InternshipsPage.scss';
+
 import HTTPClient from '../api/http_client';
 import { InternshipEntry, LinkEntry } from '../interfaces/database_types';
 
