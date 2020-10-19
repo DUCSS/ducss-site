@@ -11,7 +11,7 @@ import './Navbar.scss';
 
 const Navbar: React.FC = () => {
   return (
-    <BootstrapNavbar variant="dark" bg="ducss-dark">
+    <BootstrapNavbar fixed="top" variant="dark" bg="ducss-dark">
       <Container>
         <BootstrapNavbar.Brand as={NavLink} to="/">
           <DucssLogo width="75" height="auto" />

@@ -9,5 +9,5 @@ $theme-colors: (
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  border-top: 3px solid map-get($theme-colors, ducss-primary);
+  padding-top: 60px;
 }
