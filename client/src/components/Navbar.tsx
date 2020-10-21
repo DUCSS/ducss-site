@@ -36,6 +36,20 @@ const Navbar: React.FC = () => {
               Internships
             </Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="https://www.facebook.com/ducss.ie/events">
+              Events
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link
+              as={NavLink}
+              to="/contact"
+              activeClassName="navbar--active"
+            >
+              Contact
+            </Nav.Link>
+          </Nav.Item>
         </Nav>
       </Container>
     </BootstrapNavbar>
