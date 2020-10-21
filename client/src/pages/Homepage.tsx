@@ -4,10 +4,10 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 
 const Homepage: React.FC = () => {
   return (
-    <div className="text-center text-ducss-dark">
-      <Jumbotron className="my-4 bg-ducss-primary">
+    <div className="text-center">
+      <Jumbotron className="my-4 bg-ducss-dark text-white">
         <h1>Dublin University Computer Science Society</h1>
-        <hr className="my-4 bg-ducss-dark" />
+        <hr className="my-4 bg-ducss-primary" />
         <p className="lead">A community in Trinity College Dublin.</p>
       </Jumbotron>
       <h1>
