@@ -37,7 +37,10 @@ const Navbar: React.FC = () => {
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="https://www.facebook.com/ducss.ie/events">
+            <Nav.Link
+              active={false}
+              href="https://www.facebook.com/ducss.ie/events"
+            >
               Events
             </Nav.Link>
           </Nav.Item>
