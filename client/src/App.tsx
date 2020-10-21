@@ -5,8 +5,9 @@ import Container from 'react-bootstrap/Container';
 
 import Homepage from './pages/Homepage';
 import InternshipsPage from './pages/InternshipsPage';
-import Navbar from './components/Navbar';
 import NotFoundPage from './pages/NotFoundPage';
+import ContactPage from './pages/ContactPage';
+import Navbar from './components/Navbar';
 
 import './App.scss';
 
@@ -18,7 +19,7 @@ const App: React.FC = () => {
         <Switch>
           <Route path="/" exact component={Homepage} />
           <Route path="/internships" exact component={InternshipsPage} />
-          {/* <Route path="/contact" exact component={ContactPage} /> */}
+          <Route path="/contact" exact component={ContactPage} />
           <Route path="*" status="404" component={NotFoundPage} />
         </Switch>
       </Container>
