@@ -22,7 +22,7 @@ const ContactPage: React.FC = () => (
       </a>
     </li>
     <li>
-      <a className="text-ducss-dark" href="https://discord.gg">
+      <a className="text-ducss-dark" href="https://discord.gg/NUZGYT4">
         discord.gg/NUZGYT4
       </a>
     </li>
