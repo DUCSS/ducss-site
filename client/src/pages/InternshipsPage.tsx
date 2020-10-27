@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
 import Button from 'react-bootstrap/Button';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import Spinner from 'react-bootstrap/Spinner';
+import Container from 'react-bootstrap/Container';
 
 import './InternshipsPage.scss';
 
@@ -19,11 +21,13 @@ const InternshipsPage: React.FC = () => {
   const [internshipEntries, setInternshipEntries] = useState<
     [InternshipEntry] | undefined
   >();
+  const [loading, setLoading] = useState<boolean>(true);
   const [httpClient] = useState<HTTPClient>(new HTTPClient());
   useEffect(() => {
     (async () => {
       const entries = await HTTPClient.getInternshipEntries();
       setInternshipEntries(entries);
+      setLoading(false);
     })();
   }, [httpClient]);
 
@@ -37,6 +41,13 @@ const InternshipsPage: React.FC = () => {
           sponsors Amazon, Microsoft and Susquehanna International Group (SIG).
         </p>
       </Jumbotron>
+      {loading && (
+        <div className="d-flex justify-content-center">
+          <Spinner animation="grow" role="status">
+            <span className="sr-only">Loading...</span>
+          </Spinner>
+        </div>
+      )}
       <CardColumns>
         {internshipEntries?.map((entry: InternshipEntry) => (
           <Card border={getThemeName(entry.company)} key={entry.id}>
