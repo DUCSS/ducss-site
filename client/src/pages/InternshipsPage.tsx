@@ -5,7 +5,6 @@ import CardColumns from 'react-bootstrap/CardColumns';
 import Button from 'react-bootstrap/Button';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Spinner from 'react-bootstrap/Spinner';
-import Container from 'react-bootstrap/Container';
 
 import './InternshipsPage.scss';
 
