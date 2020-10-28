@@ -8,6 +8,8 @@ services:
         - PORT=${PORT}
         - HOST=${HOST}
         - SERVER_PORT=${SERVER_PORT}
+    volumes:
+      - "/etc/letsencrypt:/etc/letsencrypt"
     ports:
       - "80:80"
       - "443:443"
