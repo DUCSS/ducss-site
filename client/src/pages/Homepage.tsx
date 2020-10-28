@@ -113,6 +113,14 @@ const Homepage: React.FC = () => {
               >
                 Instagram
               </Button>
+              <Button
+                variant="ducss-primary"
+                href="https://discord.gg/NUZGYT4"
+                target="_blank"
+                className="mr-1"
+              >
+                Discord
+              </Button>
             </Card.Body>
           </Card>
         </Col>
