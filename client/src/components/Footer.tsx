@@ -5,7 +5,6 @@ import {
   faFacebook,
   faInstagram,
   faDiscord,
-  faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 
@@ -45,12 +44,6 @@ const Footer: React.FC = () => (
           <a href="https://discord.gg/NUZGYT4" rel="noreferrer" target="_blank">
             <FontAwesomeIcon icon={faDiscord} />
             <span className="sr-only">Discord</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/ducss" rel="noreferrer" target="_blank">
-            <FontAwesomeIcon icon={faTwitter} />
-            <span className="sr-only">Twitter</span>
           </a>
         </li>
       </ul>
