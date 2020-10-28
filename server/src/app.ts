@@ -44,7 +44,7 @@ if (process.env.NODE_ENV === "development") {
     console.log(`Listening at http://${HOST}:${PORT}`);
   });
 } else {
-  const letsencryptPath = `/etc/letsencrypt/live${HOST}`;
+  const letsencryptPath = `/etc/letsencrypt/live/${HOST}`;
   const httpsOptions = {
     key: fs.readFileSync(`${letsencryptPath}/privkey.pem`),
     cert: fs.readFileSync(`${letsencryptPath}/fullchain.pem`),
