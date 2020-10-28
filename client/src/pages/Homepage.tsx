@@ -25,8 +25,8 @@ const Homepage: React.FC = () => {
         <p className="lead">A community in Trinity College Dublin.</p>
       </Jumbotron>
       <Row className="justify-content-center">
-        <Col lg="4" md="6">
-          <Card className="mb-4" border="ducss-primary">
+        <Col lg="4" md="6" className="mb-3">
+          <Card className="h-100" border="ducss-primary">
             <Carousel>
               <Carousel.Item>
                 <img
@@ -57,8 +57,8 @@ const Homepage: React.FC = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col lg="4" md="6">
-          <Card className="mb-4" border="ducss-primary">
+        <Col lg="4" md="6" className="mb-3">
+          <Card className="h-100" border="ducss-primary">
             <Carousel>
               <Carousel.Item>
                 <img
@@ -120,8 +120,8 @@ const Homepage: React.FC = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col lg="4" md="6">
-          <Card className="mb-4" border="ducss-primary">
+        <Col lg="4" md="6" className="mb-3">
+          <Card className="h-100" border="ducss-primary">
             <Carousel>
               <Carousel.Item>
                 <img
