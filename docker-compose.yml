@@ -25,6 +25,8 @@ services:
       dockerfile: Dockerfile
       args:
         - SERVER_PORT=${SERVER_PORT}
+    volumes:
+      - "/etc/letsencrypt:/etc/letsencrypt"
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
     environment:
