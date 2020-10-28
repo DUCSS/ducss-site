@@ -51,7 +51,11 @@ const Homepage: React.FC = () => {
                 oriented PC&#39;s,and a well-stocked library of books on maths,
                 games dev, hardware and general CS.
               </Card.Text>
-              <Button variant="ducss-primary" href="" target="_blank">
+              <Button
+                variant="ducss-primary"
+                href="https://goo.gl/maps/NTiuKXRv4NaQq6XF9"
+                target="_blank"
+              >
                 Show On Map
               </Button>
             </Card.Body>
@@ -95,7 +99,7 @@ const Homepage: React.FC = () => {
               </Card.Text>
               <Button
                 variant="ducss-primary"
-                href=""
+                href="https://www.facebook.com/ducss.ie"
                 target="_blank"
                 className="mr-1"
               >
@@ -103,19 +107,11 @@ const Homepage: React.FC = () => {
               </Button>
               <Button
                 variant="ducss-primary"
-                href=""
+                href="https://www.instagram.com/ducss_/"
                 target="_blank"
                 className="mr-1"
               >
                 Instagram
-              </Button>
-              <Button
-                variant="ducss-primary"
-                href=""
-                target="_blank"
-                className="mr-1"
-              >
-                Twitter
               </Button>
             </Card.Body>
           </Card>
