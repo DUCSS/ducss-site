@@ -8,6 +8,10 @@ $theme-colors: (
 
 @import '~bootstrap/scss/bootstrap';
 
+$footer-height: 200px;
+
 body {
   padding-top: 60px;
+  padding-bottom: 20px;
+  margin-bottom: $footer-height;
 }

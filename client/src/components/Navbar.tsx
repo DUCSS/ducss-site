@@ -44,15 +44,6 @@ const Navbar: React.FC = () => {
               Events
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link
-              as={NavLink}
-              to="/contact"
-              activeClassName="navbar--active"
-            >
-              Contact
-            </Nav.Link>
-          </Nav.Item>
         </Nav>
       </Container>
     </BootstrapNavbar>
