@@ -5,6 +5,9 @@ import cors from "cors";
 import helmet from "helmet";
 import mongoose from "mongoose";
 import morgan from "morgan";
+import http from "http";
+import https from "https";
+import fs from "fs";
 
 mongoose.connect(String(process.env.MONGODB_URL), {
   useNewUrlParser: true,
@@ -36,6 +39,17 @@ app.use(errorHandler);
 const PORT = process.env.SERVER_PORT;
 const HOST = process.env.HOST || "0.0.0.0";
 
-app.listen(PORT, () => {
-  console.log(`Listening at http://${HOST}:${PORT}`);
-});
+if (process.env.NODE_ENV === "development") {
+  http.createServer(app).listen(PORT, () => {
+    console.log(`Listening at http://${HOST}:${PORT}`);
+  });
+} else {
+  const letsencryptPath = `/etc/letsencrypt/live${HOST}`;
+  const httpsOptions = {
+    key: fs.readFileSync(`${letsencryptPath}/privkey.pem`),
+    cert: fs.readFileSync(`${letsencryptPath}/fullchain.pem`),
+  }
+  https.createServer(httpsOptions, app).listen(PORT, () => {
+    console.log(`Listening at https://${HOST}:${PORT}`);
+  });
+}
