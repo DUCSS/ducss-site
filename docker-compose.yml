@@ -8,8 +8,6 @@ services:
         - PORT=${PORT}
         - HOST=${HOST}
         - SERVER_PORT=${SERVER_PORT}
-    volumes:
-      - "/etc/letsencrypt:/etc/letsencrypt"
     ports:
       - "80:80"
       - "443:443"
@@ -25,8 +23,6 @@ services:
       dockerfile: Dockerfile
       args:
         - SERVER_PORT=${SERVER_PORT}
-    volumes:
-      - "/etc/letsencrypt:/etc/letsencrypt"
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
     environment:
