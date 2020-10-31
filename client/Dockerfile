@@ -11,7 +11,8 @@ RUN npm ci --production
 FROM node:12-alpine as build
 
 ARG HOST
-ARG SERVER_PORT
+ARG SERVER_PORT_HTTP
+ARG SERVER_PORT_HTTPS
 
 WORKDIR /usr/src/app
 
@@ -21,7 +22,8 @@ COPY public ./public
 COPY --from=install_prod /usr/src/app/node_modules ./node_modules
 
 ENV REACT_APP_HOST=${HOST}
-ENV REACT_APP_SERVER_PORT=${SERVER_PORT}
+ENV REACT_APP_SERVER_PORT_HTTP=${SERVER_PORT_HTTP}
+ENV REACT_APP_SERVER_PORT_HTTPS=${SERVER_PORT_HTTPS}
 
 RUN npm run build
 

@@ -30,7 +30,7 @@ RUN npm ci --production
 # Run stage
 FROM node:12-alpine
 
-ARG SERVER_PORT
+ARG SERVER_PORT_HTTP
 
 WORKDIR /usr/src/app
 
@@ -38,7 +38,7 @@ COPY package.json package-lock.json ./
 COPY --from=build /usr/src/app/dist ./dist
 COPY --from=install_prod /usr/src/app/node_modules ./node_modules
 
-EXPOSE ${SERVER_PORT}
+EXPOSE ${SERVER_PORT_HTTP}
 
 RUN apk add --no-cache tini
 ENTRYPOINT ["/sbin/tini", "--"]

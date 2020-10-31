@@ -1,12 +1,14 @@
 import { InternshipEntry } from '../interfaces/database_types';
 
-let BASE_URL = `${process.env.REACT_APP_HOST}:${process.env.REACT_APP_SERVER_PORT}/api/v1`;
+let PORT = process.env.REACT_APP_SERVER_PORT_HTTPS;
+let PROTOCOL = 'https://';
 
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-  BASE_URL = `http://${BASE_URL}`;
-} else {
-  BASE_URL = `https://${BASE_URL}`;
+  PORT = process.env.REACT_APP_SERVER_PORT_HTTP;
+  PROTOCOL = 'http://';
 }
+
+const BASE_URL = `${PROTOCOL}${process.env.REACT_APP_HOST}:${PORT}/api/v1`;
 
 class HTTPClient {
   static request(method: string, route: string): Promise<Response> {
