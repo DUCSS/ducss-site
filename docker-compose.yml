@@ -9,8 +9,7 @@ services:
         - HOST=${HOST}
         - SERVER_PORT=${SERVER_PORT}
     ports:
-      - "80:80"
-      - "443:443"
+      - "8080:8080"
     environment:
       - NODE_ENV=production
     networks:

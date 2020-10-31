@@ -34,7 +34,6 @@ WORKDIR /usr/share/nginx/html
 
 COPY --from=build /usr/src/app/build ./
 
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]
