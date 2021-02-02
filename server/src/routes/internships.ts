@@ -5,7 +5,7 @@ import basicAuth from "express-basic-auth";
 const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
 
-if (username === undefined || password === undefined) {
+if (!username || !password) {
   throw new Error("Username or password not set");
 }
 
