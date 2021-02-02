@@ -31,6 +31,8 @@ services:
       - MONGODB_URL=${MONGODB_URL}
       - NODE_ENV=production
       - SERVER_PORT_HTTP=${SERVER_PORT_HTTP}
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
     networks:
       - backend
     depends_on:

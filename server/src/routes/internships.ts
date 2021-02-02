@@ -1,9 +1,24 @@
 import { Router, Request, Response } from "express";
 import { InternshipEntry } from "../models/InternshipEntry";
+import basicAuth from "express-basic-auth";
+
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
+
+if (username === undefined || password === undefined) {
+  throw new Error("Username or password not set");
+}
+
+const user: Record<string, string> = {};
+user[username] = password;
+const auth = basicAuth({
+  users: user,
+  unauthorizedResponse: (_: Request) => ({ message: "401 - Unauthorized request" }),
+});
 
 const router = Router();
 
-router.get("/", async (req: Request, res: Response) => {
+router.get("/", async (_: Request, res: Response) => {
   const internshipEntries = await InternshipEntry.find().sort({ company: 1 });
   res.status(200);
   res.json({ response: internshipEntries });
@@ -17,6 +32,7 @@ router.get("/:id", async (req: Request, res: Response) => {
 
 router.post(
   "/",
+  auth,
   async (req: Request, res: Response, next: CallableFunction) => {
     try {
       const internshipEntry = new InternshipEntry(req.body);
@@ -32,6 +48,7 @@ router.post(
 
 router.post(
   "/:id",
+  auth,
   async (req: Request, res: Response, next: CallableFunction) => {
     try {
       const internshipEntry = req.body;
@@ -44,6 +61,22 @@ router.post(
       res.json({ response: updatedEntry });
     } catch (error) {
       if (error.name === "ValidationError") res.status(400);
+      next(error);
+    }
+  }
+);
+
+router.delete(
+  "/:id",
+  auth,
+  async (req: Request, res: Response, next: CallableFunction) => {
+    try {
+      const removedEntry = await InternshipEntry.findByIdAndRemove(
+        req.params.id
+      );
+      res.status(200);
+      res.json({ response: removedEntry });
+    } catch (error) {
       next(error);
     }
   }
