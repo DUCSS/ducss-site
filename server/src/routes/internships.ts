@@ -46,7 +46,7 @@ router.post(
   }
 );
 
-router.post(
+router.patch(
   "/:id",
   auth,
   async (req: Request, res: Response, next: CallableFunction) => {
