@@ -1,0 +1,17 @@
+$theme-colors: (
+  ducss-primary: #fd9e3d,
+  ducss-dark: #323b4b,
+  amazon: #ff9900,
+  microsoft: #01a6f0,
+  susquehanna-international-group: #8abeeb,
+);
+
+@import '~bootstrap/scss/bootstrap';
+
+$footer-height: 200px;
+
+body {
+  padding-top: 60px;
+  padding-bottom: 20px;
+  margin-bottom: $footer-height;
+}

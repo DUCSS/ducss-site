@@ -1,0 +1,55 @@
+version: "3.8"
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+      args:
+        - PORT=${PORT}
+        - HOST=${HOST}
+        - SERVER_PORT_HTTP=${SERVER_PORT_HTTP}
+        - SERVER_PORT_HTTPS=${SERVER_PORT_HTTPS}
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - backend
+    stdin_open: true
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+      args:
+        - SERVER_PORT_HTTP=${SERVER_PORT_HTTP}
+    ports:
+      - ${SERVER_PORT_HTTP}:${SERVER_PORT_HTTP}
+    environment:
+      - HOST=${HOST}
+      - CORS_ORIGIN_URL=${CORS_ORIGIN_URL}
+      - MONGODB_URL=${MONGODB_URL}
+      - NODE_ENV=production
+      - SERVER_PORT_HTTP=${SERVER_PORT_HTTP}
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
+    networks:
+      - backend
+    depends_on:
+      - db
+
+  db:
+    image: mongo:4.4.1-bionic
+    ports:
+      - ${MONGODB_PORT}:${MONGODB_PORT}
+    networks:
+      - backend
+    volumes:
+      - database_data:/data/db
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  database_data:

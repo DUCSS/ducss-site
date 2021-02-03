@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: dev.Dockerfile
+    ports:
+      - ${PORT}:${PORT}
+    environment:
+      - NODE_ENV=development
+      - PORT=${PORT}
+      - REACT_APP_HOST=${HOST}
+      - REACT_APP_SERVER_PORT_HTTP=${SERVER_PORT_HTTP}
+      - REACT_APP_SERVER_PORT_HTTPS=${SERVER_PORT_HTTPS}
+    volumes:
+      - ./client/src:/usr/src/app/src
+      - ./client/package.json:/usr/src/app/package.json
+      - ./client/package-lock.json:/usr/src/app/package-lock.json
+
+  server:
+    build:
+      context: ./server
+      dockerfile: dev.Dockerfile
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./server/src:/usr/src/app/src
+      - ./server/package.json:/usr/src/app/package.json
+      - ./server/package-lock.json:/usr/src/app/package-lock.json
