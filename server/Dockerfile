@@ -1,5 +1,5 @@
 # Install dev dependencies stage
-FROM node:12-alpine as install_dev
+FROM node:15-alpine as install_dev
 
 WORKDIR /usr/src/app
 
@@ -8,7 +8,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 # Build stage
-FROM node:12-alpine as build
+FROM node:15-alpine as build
 
 WORKDIR /usr/src/app
 
@@ -19,7 +19,7 @@ COPY --from=install_dev /usr/src/app/node_modules ./node_modules
 RUN npm run build
 
 # Install prod dependencies stage
-FROM node:12-alpine as install_prod
+FROM node:15-alpine as install_prod
 
 WORKDIR /usr/src/app
 
@@ -28,7 +28,7 @@ COPY package.json package-lock.json ./
 RUN npm ci --production
 
 # Run stage
-FROM node:12-alpine
+FROM node:15-alpine
 
 ARG SERVER_PORT_HTTP
 
