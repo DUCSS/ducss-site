@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./
 
-RUN npm ci --production
+RUN yarn --production
 
 # Build stage
 FROM node:15-alpine as build
@@ -25,7 +25,7 @@ ENV REACT_APP_HOST=${HOST}
 ENV REACT_APP_SERVER_PORT_HTTP=${SERVER_PORT_HTTP}
 ENV REACT_APP_SERVER_PORT_HTTPS=${SERVER_PORT_HTTPS}
 
-RUN npm run build
+RUN yarn build
 
 # Run stage
 FROM nginx:1.19.2-alpine

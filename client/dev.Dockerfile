@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./
 
-RUN npm install
+RUN yarn install
 
 # Run stage
 FROM node:15-alpine
@@ -21,4 +21,4 @@ COPY --from=install_dev /usr/src/app/node_modules ./node_modules
 
 EXPOSE ${PORT}
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
