@@ -3,7 +3,7 @@ FROM node:15-alpine as install_dev
 
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json ./
+COPY package.json yarn.lock ./
 
 RUN yarn install
 
@@ -23,7 +23,7 @@ FROM node:15-alpine as install_prod
 
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json ./
+COPY package.json yarn.lock ./
 
 RUN yarn --production
 
@@ -34,7 +34,7 @@ ARG SERVER_PORT_HTTP
 
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json ./
+COPY package.json yarn.lock ./
 COPY --from=build /usr/src/app/dist ./dist
 COPY --from=install_prod /usr/src/app/node_modules ./node_modules
 

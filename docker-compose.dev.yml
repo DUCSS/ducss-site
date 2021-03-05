@@ -15,7 +15,7 @@ services:
     volumes:
       - ./client/src:/usr/src/app/src
       - ./client/package.json:/usr/src/app/package.json
-      - ./client/package-lock.json:/usr/src/app/package-lock.json
+      - ./client/yarn.lock:/usr/src/app/yarn.lock
 
   server:
     build:
@@ -26,4 +26,4 @@ services:
     volumes:
       - ./server/src:/usr/src/app/src
       - ./server/package.json:/usr/src/app/package.json
-      - ./server/package-lock.json:/usr/src/app/package-lock.json
+      - ./server/yarn.lock:/usr/src/app/yarn.lock
