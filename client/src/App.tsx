@@ -11,20 +11,18 @@ import Footer from './components/Footer';
 
 import './App.scss';
 
-const App: React.FC = () => {
-  return (
-    <Router>
-      <Navbar />
-      <Container>
-        <Switch>
-          <Route path="/" exact component={Homepage} />
-          <Route path="/internships" exact component={InternshipsPage} />
-          <Route path="*" status="404" component={NotFoundPage} />
-        </Switch>
-      </Container>
-      <Footer />
-    </Router>
-  );
-};
+const App: React.FC = () => (
+  <Router>
+    <Navbar />
+    <Container>
+      <Switch>
+        <Route path="/" exact component={Homepage} />
+        <Route path="/internships" exact component={InternshipsPage} />
+        <Route path="*" component={NotFoundPage} />
+      </Switch>
+    </Container>
+    <Footer />
+  </Router>
+);
 
 export default App;

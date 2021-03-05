@@ -9,8 +9,6 @@ module.exports = {
     'eslint:recommended',
     'airbnb',
     'prettier',
-    'prettier/react',
-    'prettier/@typescript-eslint',
   ],
   globals: {
     Atomics: 'readonly',
