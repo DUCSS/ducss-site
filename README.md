@@ -4,6 +4,15 @@
 
 DUCSS website repository
 
+## Table of contents
+1. [Getting started](#getting-started)
+    1. [Running the website locally](#running-the-website-locally)
+        1. [Prerequisites](#prerequisites)
+        1. [Running the website](#running-the-website)
+    1. [Deploying to production](#deploying-to-production)
+        1. [Prerequisites](#prerequisites-1)
+        1. [Running the website](#running-the-website-1)
+
 ## Getting started
 
 ### Running the website locally
