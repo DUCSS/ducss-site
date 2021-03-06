@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 
 COPY package.json yarn.lock ./
 
-RUN yarn --production
+RUN yarn install --production
 
 # Build stage
 FROM node:15-alpine as build
