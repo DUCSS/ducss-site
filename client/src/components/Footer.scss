@@ -1,0 +1,37 @@
+@import '../App.scss';
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footer-height;
+  line-height: $footer-height;
+  background-color: #f5f5f5;
+}
+
+.socials {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    float: left;
+    margin: 0 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  a {
+    color: map-get($theme-colors, ducss-dark);
+  }
+
+  a:hover {
+    color: map-get($theme-colors, ducss-primary);
+  }
+}

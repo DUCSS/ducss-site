@@ -1,0 +1,14 @@
+@import '~bootstrap/scss/bootstrap';
+
+.card-columns.card-columns {
+  @include media-breakpoint-only(sm) {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+  @include media-breakpoint-only(md) {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
