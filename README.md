@@ -5,13 +5,14 @@
 DUCSS website repository
 
 ## Table of contents
+
 1. [Getting started](#getting-started)
-    1. [Running the website locally](#running-the-website-locally)
-        1. [Prerequisites](#prerequisites)
-        1. [Running the website](#running-the-website)
-    1. [Deploying to production](#deploying-to-production)
-        1. [Prerequisites](#prerequisites-1)
-        1. [Running the website](#running-the-website-1)
+   1. [Running the website locally](#running-the-website-locally)
+      1. [Prerequisites](#prerequisites)
+      1. [Running the website](#running-the-website)
+   1. [Deploying to production](#deploying-to-production)
+      1. [Prerequisites](#prerequisites-1)
+      1. [Running the website](#running-the-website-1)
 
 ## Getting started
 
@@ -26,13 +27,13 @@ You will need to have installed:
 #### Running the website
 
 1. Clone the repo
-    ```
-    git clone https://github.com/DUCSS/ducss-site.git
-    ```
+   ```
+   git clone https://github.com/DUCSS/ducss-site.git
+   ```
 1. Navigate into the cloned GitHub repository
-    ```
-    cd ducss-site
-    ```
+   ```
+   cd ducss-site
+   ```
 1. Copy `.env.example` to `.env` and change `HOST`, `PORT`, `CORS_ORIGIN_URL`, `MONGODB_PORT`, `MONGODB_URL`, `SERVER_PORT_HTTP`, `SERVER_PORT_HTTPS`, `USERNAME` and `PASSWORD`
 1. Run the start script using `./start_dev.sh`
 
@@ -50,19 +51,19 @@ You will need to have installed:
 
 #### Running the website
 
-1. Get a certificate for the domain `ducss.ie`, instructions are found [here](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx) 
-1. Copy `nginx.conf` to `/etc/nginx/nginx.conf`
-    ```
-    cp ./nginx.conf /etc/nginx/nginx.conf
-    ```
+1. Get a certificate for the domain `ducss.ie`, instructions are found [here](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx)
 1. Clone the repo
-    ```
-    git clone https://github.com/DUCSS/ducss-site.git
-    ```
+   ```
+   git clone https://github.com/DUCSS/ducss-site.git
+   ```
 1. Navigate into the cloned GitHub repository
-    ```
-    cd ducss-site
-    ```
+   ```
+   cd ducss-site
+   ```
+1. Copy `nginx.conf` to `/etc/nginx/nginx.conf`
+   ```
+   cp ./nginx.conf /etc/nginx/nginx.conf
+   ```
 1. Copy `.env.example` to `.env` and change `HOST`, `PORT`, `CORS_ORIGIN_URL`, `MONGODB_PORT`, `MONGODB_URL`, `SERVER_PORT_HTTP`, `SERVER_PORT_HTTPS`, `USERNAME` and `PASSWORD`
 1. Run the start script using `./start.sh`
 
