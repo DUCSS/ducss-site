@@ -40,8 +40,6 @@ services:
 
   db:
     image: mongo:4.4.1-bionic
-    ports:
-      - ${MONGODB_PORT}:${MONGODB_PORT}
     networks:
       - backend
     volumes:
