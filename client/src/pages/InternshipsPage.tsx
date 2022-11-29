@@ -37,7 +37,7 @@ const InternshipsPage: React.FC = () => {
         <hr className="my-4 bg-ducss-primary" />
         <p>
           Here you can find information about internships provided by our
-          sponsors Microsoft, Susquehanna International Group (SIG), Stripe and Amazon.
+          sponsors Susquehanna International Group (SIG) and Stripe.
         </p>
       </Jumbotron>
       {loading && (
