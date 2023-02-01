@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "express-basic-auth": "^1.2.0",
     "helmet": "^4.4.1",
-    "mongoose": "^5.11.18",
+    "mongoose": "^5.13.15",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
